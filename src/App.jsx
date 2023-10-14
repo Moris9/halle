@@ -1,33 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from "./view/Home.jsx";
+import AdminPanel from "./view/admin/index.jsx"
+import Users from "./view/admin/Users.jsx";
+import Experts from "./view/admin/Experts.jsx";
+import Comments from "./view/admin/Comments.jsx";
+import Category from "./view/admin/categories/Category.jsx";
+import Services from "./view/admin/services/Services.jsx";
+import SubCategory from "./view/admin/subCategories/SubCategory.jsx";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <BrowserRouter>
+            <Routes>
+                {/**/}
+                <Route path="/" exact element={<Home/>} />
+                <Route path="/admin/dashboard" exact element={<AdminPanel/>}/>
+                <Route path="/admin/users" exact element={<Users/>}/>
+                <Route path="/admin/experts" exact element={<Experts/>}/>
+                <Route path="/admin/comments" exact element={<Comments/>}/>
+                <Route path="/admin/categories" exact element={<Category/>}/>
+                <Route path="/admin/sub-categories" exact element={<SubCategory/>}/>
+                <Route path="/admin/services" exact element={<Services/>}/>
+            </Routes>
+        </BrowserRouter>
     </>
   )
 }

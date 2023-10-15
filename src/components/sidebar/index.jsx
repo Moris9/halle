@@ -3,15 +3,20 @@ import {Link} from "react-router-dom";
 import {IoLinkSharp} from "react-icons/io5";
 import {IoPerson} from "react-icons/io5";
 import {IoPeople} from "react-icons/io5";
-import {BiCategory, BiSolidServer} from "react-icons/bi";
+import {BiCategory, BiMoney, BiSolidServer} from "react-icons/bi";
 const Sidebar = ({ open, onClose }) => {
 
-  const navigation = [
+  const AdminNavigation = [
     { name: 'داشبورد', href: '/admin/dashboard',icon:<BiSolidServer/>, current: document.URL.endsWith('dashboard') },
     { name: 'کابران', href: '/admin/users',icon:<IoPeople/>, current: document.URL.endsWith('users') },
     { name: 'متخصصین', href: '/admin/experts',icon: <IoPerson/>, current: document.URL.endsWith('experts') },
     { name: 'دسته بندی ها', href: '/admin/categories',icon:<BiCategory/>, current: document.URL.endsWith('categories') },
     { name: 'نظرات', href: '/admin/comments',icon:<IoLinkSharp/> ,current: document.URL.endsWith('comments') },
+  ]
+  const ExpertNavigation = [
+    {name: 'داشبورد' , href: '/expert/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
+    {name: 'عضویت ویژه' , href: '/expert/vip', icon: <BiMoney/> , current: document.URL.endsWith('vip')},
+    {name: 'پروفایل' , href: '/expert/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')}
   ]
 
   return (
@@ -37,7 +42,7 @@ const Sidebar = ({ open, onClose }) => {
 
       <ul className="mb-auto pt-1">
 
-        {navigation.map((item) => (
+        {(document.URL.includes('expert') ? ExpertNavigation : AdminNavigation).map((item) => (
             <Link
                 key={item.name}
                 to={item.href}
@@ -47,8 +52,8 @@ const Sidebar = ({ open, onClose }) => {
                     <span
                         className="font-bold text-brand-500 dark:text-white">
                         {item.icon}
-                    </span><p
-                    className="leading-1 ml-4 flex font-bold text-navy-700 dark:text-white">{item.name}</p>
+                    </span>
+                  <p className="leading-1 ml-4 flex font-bold text-navy-700 dark:text-white">{item.name}</p>
                 </li>
                 {item.current && (
                     <div className="absolute right top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400"></div>

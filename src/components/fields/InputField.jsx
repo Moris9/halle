@@ -1,5 +1,3 @@
-// Custom components
-import React from "react";
 
 function InputField(props) {
   const { label, id,name, extra, type, placeholder, variant,onChange,value } =
@@ -9,8 +7,8 @@ function InputField(props) {
     <div className={`${extra}`}>
       <label
         htmlFor={id}
-        className={`text-sm text-white ${
-          variant === "auth" ? "ml-1.5 font-medium" : "ml-3 font-bold !text-black"
+        className={`text-sm  ${
+          variant === "auth" ? "ml-1.5 font-medium text-black" : "ml-3 font-bold !text-black"
         }`}
       >
         {label}

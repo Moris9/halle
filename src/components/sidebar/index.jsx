@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {IoLinkSharp} from "react-icons/io5";
 import {IoPerson} from "react-icons/io5";
 import {IoPeople} from "react-icons/io5";
-import {BiCategory, BiMoney, BiSolidServer} from "react-icons/bi";
+import {BiCategory, BiLogOut, BiMoney, BiSolidServer} from "react-icons/bi";
 const Sidebar = ({ open, onClose }) => {
 
   const AdminNavigation = [
@@ -17,6 +17,11 @@ const Sidebar = ({ open, onClose }) => {
     {name: 'داشبورد' , href: '/expert/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
     {name: 'عضویت ویژه' , href: '/expert/vip', icon: <BiMoney/> , current: document.URL.endsWith('vip')},
     {name: 'پروفایل' , href: '/expert/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')}
+  ]
+  const UserNavigation = [
+    {name: 'داشبورد' , href: '/user/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
+    {name: 'پروفایل' , href: '/user/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')},
+    {name: 'خروج' , href: '/user/logout', icon: <BiLogOut/> , current: document.URL.endsWith('logout')}
   ]
 
   return (
@@ -41,8 +46,7 @@ const Sidebar = ({ open, onClose }) => {
       {/* Nav item */}
 
       <ul className="mb-auto pt-1">
-
-        {(document.URL.includes('expert') ? ExpertNavigation : AdminNavigation).map((item) => (
+        {(document.URL.includes('expert') ? ExpertNavigation : (document.URL.includes('admin') ?  AdminNavigation : UserNavigation).map((item) => (
             <Link
                 key={item.name}
                 to={item.href}
@@ -59,9 +63,8 @@ const Sidebar = ({ open, onClose }) => {
                     <div className="absolute right top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400"></div>
                 )}
               </div>
-
             </Link>
-        ))}
+        )))}
 
       </ul>
 

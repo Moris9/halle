@@ -11,9 +11,15 @@ import SubCategory from "./view/admin/subCategories/SubCategory.jsx";
 import ExpertDashboard from "./view/Expert/index.jsx";
 import VIP from "./view/Expert/VIP.jsx";
 import ProfileOverview from "./view/Expert/profile/index.jsx";
+import UserDashboard from "./view/User/index.jsx";
+import UserProfileOverview from "./view/User/profile/index.jsx";
+import SignIn from "./view/auth/SignIn.jsx";
+import SingUp from "./view/auth/Singup.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
+        { element: <SignIn/> , path: '/login'},
+        { element: <SingUp/> , path: '/register'},
         { element: <AdminPanel/>, path: '/admin/dashboard' },
         { element: <Users/>, path: '/admin/users' },
         { element: <Experts/>, path: '/admin/experts' },
@@ -23,7 +29,9 @@ function App() {
         { element: <SubCategory/>, path: '/admin/sub-categories' },
         { element: <ExpertDashboard/> , path: '/expert/dashboard'},
         { element: <VIP/> , path: '/expert/vip'},
-        { element: <ProfileOverview/> , path: '/expert/profile'}
+        { element: <ProfileOverview/> , path: '/expert/profile'},
+        { element: <UserDashboard/> , path: '/user/dashboard'},
+        { element: <UserProfileOverview/> , path: '/user/profile'}
     ]
   return (
     <>

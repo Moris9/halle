@@ -60,6 +60,7 @@ function Navbar() {
                                 </div>
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                     <a
+                                        href="/login"
                                         className="relative cursor-pointer rounded-full bg-blue-500 text-sm text-black hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800 p-2"
                                     >
                                         ورود / ثبت نام

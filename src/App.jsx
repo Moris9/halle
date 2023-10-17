@@ -15,9 +15,11 @@ import UserDashboard from "./view/User/index.jsx";
 import UserProfileOverview from "./view/User/profile/index.jsx";
 import SignIn from "./view/auth/SignIn.jsx";
 import SingUp from "./view/auth/Singup.jsx";
+import AboutUs from "./view/AboutUs.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
+        { element: <AboutUs/>, path: '/about-us' },
         { element: <SignIn/> , path: '/login'},
         { element: <SingUp/> , path: '/register'},
         { element: <AdminPanel/>, path: '/admin/dashboard' },

@@ -3,6 +3,8 @@ import {Helmet} from "react-helmet";
 import {useState} from "react";
 import {BiHome} from "react-icons/bi";
 import {Link} from "react-router-dom";
+import worker_1 from "../assets/images/worker.jpg"
+import worker_2 from "../assets/images/worker_2.jpg"
 
 function Home() {
     const [activeTab, setActiveTab] = useState('page1');
@@ -18,7 +20,7 @@ function Home() {
             <AppLayout>
                 <div className="mx-auto">
                     <section className="p-14 flex ">
-                        <ul className="text-center text-gray-500 bg-gray-100 rounded-lg p-1">
+                        <ul className="text-center text-gray-500 bg-gray-100 rounded-lg p-1 self-center">
                             <li>
                                 <span
                                     onClick={() => switchTab('page1')}
@@ -42,6 +44,15 @@ function Home() {
                                 <h1 className="text-4xl font-semibold">
                                     دسترسی آسان به متخصصین، در خدمت از ما
                                 </h1>
+                                <div className="flex gap-12">
+                                    <div className="self-center">
+                                        <p className="text-black mt-10 leading-10 text-justify">وقت کم میاری؟ ⏰ نیاز داری به یک تخصص ولی پیدا نمی کنی؟ دامنه ی انتخابت برای پیدا کردن یک تخصص کوچیکه؟ تفاوت قیمت ها زیاده؟</p>
+                                        <p className="text-black mt-2 leading-10 text-justify">ما در اینجا همه این مشکلات را از بین می بریم. به راحتی بهترین متخصص برای رفع نیازت با بهترین قیمت پیدا کن.</p>
+                                    </div>
+                                    <div>
+                                        <img className="w-96 rounded h-auto" src={worker_1} alt="worker"/>
+                                    </div>
+                                </div>
 
                                 <div className='mt-10 w-[500px]'>
                                     <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
@@ -52,7 +63,7 @@ function Home() {
                                         </div>
 
                                         <input
-                                            className="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
+                                            className="peer h-full w-full outline-none text-sm text-gray-700 pr-2 shadow-xl"
                                             type="text"
                                             id="search"
                                             placeholder="به چه خدمتی نیاز دارید؟" />
@@ -69,6 +80,15 @@ function Home() {
                                 <h1  className="text-4xl font-semibold">
                                     در "خدمت از ما" تعداد مشتری و میزان درآمد خود را افزایش دهید
                                 </h1>
+                                <div className="flex gap-12">
+                                    <div className="self-center">
+                                        <p className="text-black mt-10 leading-10 text-justify">می خواهی مشتری های بیشتری داشته باشی؟ کیفیت کارت بالاست ولی کار کم؟ میخوای اسم در کنی؟ قیمتت مناسب ارائه میدی ولی بازخورد باید را نداری؟ ما حلش می کنیم! با ما باش تا مشتری را به راحتی پیدات کنه و سفارش هات چند برابر باشه!</p>
+                                    </div>
+                                    <div className="my-5">
+                                        <img className="rounded h-auto" src={worker_2} alt="worker"/>
+                                    </div>
+                                </div>
+
 
                                 <button className="bg-transparent mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                                     شروع کنید
@@ -290,70 +310,7 @@ function Home() {
 
                     </section>
 
-                    <section className="mx-auto text-center pb-10">
-                        <h3
-                            className="mb-6 text-4xl font-bold text-neutral-800 ">
-                            نظرات
-                        </h3>
-                        <p className="mb-6 pb-2 md:mb-12 md:pb-0">
-                          نظرات ارزشمند شما درباره خدمات ما
-                        </p>
 
-                        <div className="grid text-center md:grid-cols-3 px-12 gap-10">
-                            <div className="mb-12 md:mb-0">
-                            <div className="mb-6 flex justify-center">
-                                <img
-                                    src="https://avatars.githubusercontent.com/u/53135000?v=4"
-                                    className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
-                            </div>
-                            <h5 className="mb-4 text-xl font-semibold">محمد عبدالرحمانی</h5>
-                            <h6 className="mb-4 font-semibold text-primary dark:text-primary-500">
-                                Web Developer
-                            </h6>
-                            <p className="mb-4">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-
-
-                            </p>
-                        </div>
-                            <div className="mb-12 md:mb-0">
-                                <div className="mb-6 flex justify-center">
-                                    <img
-                                        src="https://avatars.githubusercontent.com/u/53135000?v=4"
-                                        className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
-                                </div>
-                                <h5 className="mb-4 text-xl font-semibold">محمد عبدالرحمانی</h5>
-                                <h6 className="mb-4 font-semibold text-primary dark:text-primary-500">
-                                    Web Developer
-                                </h6>
-                                <p className="mb-4">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-
-
-                                </p>
-                            </div>
-                            <div className="mb-12 md:mb-0">
-                                <div className="mb-6 flex justify-center">
-                                    <img
-                                        src="https://avatars.githubusercontent.com/u/53135000?v=4"
-                                        className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
-                                </div>
-                                <h5 className="mb-4 text-xl font-semibold">محمد عبدالرحمانی</h5>
-                                <h6 className="mb-4 font-semibold text-primary dark:text-primary-500">
-                                    Web Developer
-                                </h6>
-                                <p className="mb-4">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-
-
-                                </p>
-                            </div>
-
-                    </div>
-                    </section>
                 </div>
             </AppLayout>
         </>

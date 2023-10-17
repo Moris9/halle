@@ -16,11 +16,15 @@ import UserProfileOverview from "./view/User/profile/index.jsx";
 import SignIn from "./view/auth/SignIn.jsx";
 import SingUp from "./view/auth/Singup.jsx";
 import AboutUs from "./view/AboutUs.jsx";
+import ExpertRegister from "./view/auth/ExpertRegister.jsx";
+import Price from "./view/Price.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
         { element: <AboutUs/>, path: '/about-us' },
+        { element: <ExpertRegister/> , path: "/providers"},
         { element: <SignIn/> , path: '/login'},
+        { element: <Price/> , path: "/prices"},
         { element: <SingUp/> , path: '/register'},
         { element: <AdminPanel/>, path: '/admin/dashboard' },
         { element: <Users/>, path: '/admin/users' },

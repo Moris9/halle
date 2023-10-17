@@ -20,7 +20,7 @@ function InputField(props) {
         onChange={onChange}
         placeholder={placeholder}
         value={value}
-        className="mt-2 flex h-12 w-full text-black  items-center justify-center rounded-xl  border bg-white p-3 text-sm outline-none"
+        className="mt-5 flex h-12 w-full text-black  items-center justify-center rounded-xl  border bg-white p-3 text-sm outline-none"
       />
     </div>
   );

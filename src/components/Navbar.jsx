@@ -4,8 +4,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
     { name: 'صفحه اصلی', href: '/', current: true },
-    { name: 'قیمت خدمات', href: '#', current: false },
-    { name: 'پیوستن متخصصین', href: '#', current: false },
+    { name: 'قیمت خدمات', href: '/prices', current: false },
+    { name: 'پیوستن متخصصین', href: '/providers', current: false },
     { name: 'درباره ما', href: '/about-us', current: false },
 ]
 

@@ -6,7 +6,7 @@ function VIP() {
         <>
             <Admin currentRoute="داشبورد">
                 <Helmet>
-                    <title>خدمت از ما-عضویت ویژه</title>
+                    <title>حله-عضویت ویژه</title>
                 </Helmet>
 
                 <div className="grid lg:grid-cols-2 px-8 gap-10 text-zinc-800 mt-10">

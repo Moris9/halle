@@ -20,7 +20,7 @@ function SingUp() {
     return (
         <Auth>
             <Helmet>
-                <title>خدمت از ما-ایجاد حساب کاربری</title>
+                <title>حله-ایجاد حساب کاربری</title>
             </Helmet>
             <div className="flex justify-center">
                 {/* Sign in section */}

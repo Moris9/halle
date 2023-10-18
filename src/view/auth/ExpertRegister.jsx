@@ -29,7 +29,7 @@ function ExpertRegister() {
 
                     <section className="mt-5">
                         <h2 className="text-2xl text-center">
-                            در "خدمت از ما" مشتری ها به دنبال خدمات زیر هستند
+                            در <span className="text-blue-700">حله</span> مشتری ها به دنبال خدمات زیر هستند
                         </h2>
                         <div className="flex gap-10 container justify-center mt-6">
                             <span className="text-center"><BsPersonCircle className="m-5 h-10 w-10"/>زیبایی</span>

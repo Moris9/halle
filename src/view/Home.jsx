@@ -3,8 +3,8 @@ import {Helmet} from "react-helmet";
 import {useState} from "react";
 import {BiHome} from "react-icons/bi";
 import {Link} from "react-router-dom";
-import worker_1 from "../assets/images/worker.jpg"
-import worker_2 from "../assets/images/worker_2.jpg"
+import worker_1 from "../assets/worker_1.svg"
+import worker_2 from "../assets/worker_2.svg"
 
 function Home() {
     const [activeTab, setActiveTab] = useState('page1');
@@ -42,19 +42,19 @@ function Home() {
                         {activeTab === 'page1' && (
                             <div className="p-5 container">
                                 <h1 className="text-4xl font-semibold">
-                                    دسترسی آسان به متخصصین، در خدمت از ما
+                                    با <span className="text-blue-700">حله</span> در کمترین زمان متخصص مورد نیازتو پیدا کن
                                 </h1>
                                 <div className="flex gap-12">
-                                    <div className="self-center">
+                                    <div className="self-center max-w-2xl">
                                         <p className="text-black mt-10 leading-10 text-justify">وقت کم میاری؟ ⏰ نیاز داری به یک تخصص ولی پیدا نمی کنی؟ دامنه ی انتخابت برای پیدا کردن یک تخصص کوچیکه؟ تفاوت قیمت ها زیاده؟</p>
                                         <p className="text-black mt-2 leading-10 text-justify">ما در اینجا همه این مشکلات را از بین می بریم. به راحتی بهترین متخصص برای رفع نیازت با بهترین قیمت پیدا کن.</p>
                                     </div>
                                     <div>
-                                        <img className="w-96 rounded h-auto" src={worker_1} alt="worker"/>
+                                        <img className="w-2/3" src={worker_1} loading="lazy" alt="worker"/>
                                     </div>
                                 </div>
 
-                                <div className='mt-10 w-[500px]'>
+                                <div className=''>
                                     <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
                                         <div className="grid place-items-center h-full w-12 text-gray-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,7 +67,7 @@ function Home() {
                                             type="text"
                                             id="search"
                                             placeholder="به چه خدمتی نیاز دارید؟" />
-                                        <button className="bg-blue-500 text-white px-2 py-4 w-full">
+                                        <button className="bg-blue-700 text-white px-2 py-4 w-full">
                                             جست و جو
                                         </button>
                                     </div>
@@ -78,21 +78,22 @@ function Home() {
                         {activeTab === 'page2' && (
                             <div className="p-5">
                                 <h1  className="text-4xl font-semibold">
-                                    در "خدمت از ما" تعداد مشتری و میزان درآمد خود را افزایش دهید
+                                    با <span className="text-blue-700">حله</span> کارت را معرفی کن
                                 </h1>
                                 <div className="flex gap-12">
                                     <div className="self-center">
                                         <p className="text-black mt-10 leading-10 text-justify">می خواهی مشتری های بیشتری داشته باشی؟ کیفیت کارت بالاست ولی کار کم؟ میخوای اسم در کنی؟ قیمتت مناسب ارائه میدی ولی بازخورد باید را نداری؟ ما حلش می کنیم! با ما باش تا مشتری را به راحتی پیدات کنه و سفارش هات چند برابر باشه!</p>
                                     </div>
                                     <div className="my-5">
-                                        <img className="rounded h-auto" src={worker_2} alt="worker"/>
+                                        <img className="w-3/4" src={worker_2} alt="worker"/>
                                     </div>
                                 </div>
+                                <div className="flex">
+                                    <a href="/providers" className="bg-transparent text-center w-full mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                        شروع کنید
+                                    </a>
+                                </div>
 
-
-                                <button className="bg-transparent mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                                    شروع کنید
-                                </button>
                             </div>
                         )}
                     </section>
@@ -125,7 +126,7 @@ function Home() {
                         </div>
                     </section>
                     <section className="mt-10 py-10 px-6">
-                        <h2 className="text-4xl ">خدمات محبوب در بازار تهران "خدمت از ما"</h2>
+                        <h2 className="text-4xl font-bold">خدمات محبوب در زنجان</h2>
                         <div className="mt-10 grid sm:grid-cols-6  xl:sm:grid-cols-6 grid-cols-6 gap-1">
 
 
@@ -289,17 +290,17 @@ function Home() {
                         <div className="text-white sm:mx-10 relative items-center justify-evenly xl:py-2 pb-2 pt-2 sm:px-16 px-9 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-3xl">
                           <div className="flex xl:flex-row flex-col ">
                               <div className="text-justify self-center">
-                                  <h2 className="text-2xl">دسترسی به بهترین متخصصین، در اپلیکیشن خدمت از ما
+                                  <h2 className="text-2xl">دسترسی به بهترین متخصصین، در اپلیکیشن حله
                                   </h2>
 
-                                  <p className="pt-5 text-sm w-4/6">
-                                      قبل از انجام کارهایتان، از چند متخصص قیمت بگیرید. سوابق حرفه ای متخصصین و نظرات مشتریان را مشاهده کنید. در اپلیکیشن "خدمت از ما"، به بهترین متخصصین دسترسی دارید.
+                                  <p className="pt-5 text-sm w-4/6 leading-10">
+                                      قبل از انجام کارهایتان، از چند متخصص قیمت بگیرید. سوابق حرفه ای متخصصین و نظرات مشتریان را مشاهده کنید. در اپلیکیشن "حله"، به بهترین متخصصین دسترسی دارید.
 
                                       برای دریافت لینک دانلود اپلیکیشن، شماره خود را وارد کنید
                                   </p>
                               </div>
                               <div>
-                                  <img src="https://anophel.com/build/assets/Phone-mockup-d2a6718a.webp" alt="aa"/>
+                                  <img src="https://anophel.com/build/assets/Phone-mockup-d2a6718a.webp" alt="halle"/>
                               </div>
 
                           </div>

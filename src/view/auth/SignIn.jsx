@@ -23,7 +23,7 @@ export default function SignIn() {
   return (
       <Auth>
         <Helmet>
-          <title>خدمت از ما-ورود</title>
+          <title>حله-ورود</title>
         </Helmet>
         <div className="flex w-full justify-center">
           {/* Sign in section */}

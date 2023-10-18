@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'sans';
+    src: url('assets/sans.ttf') format('woff'), url('assets/sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    font-family: sans, serif !important
+}

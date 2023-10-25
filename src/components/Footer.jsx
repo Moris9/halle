@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function Footer() {
     return (
         <>
@@ -26,7 +28,7 @@ function Footer() {
                     <div className="mt-28 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
                         <p className="order-2 md:order-1 mt-8 md:mt-0"> &copy; وبسایت خدمت از ما 2024 </p>
                         <div className="order-1 md:order-2">
-                            <a href="/about-us" className="px-2 border-l">درباره ما</a>
+                            <Link to="/about-us" className="px-2 border-l">درباره ما</Link>
                             <span className="px-2 ">ارنباط با ما <span>09227085246</span></span>
                         </div>
                     </div>

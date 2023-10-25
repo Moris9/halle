@@ -3,7 +3,7 @@ import ComplexTable from "../tables/components/ComplexTable.jsx";
 import {ServicesTable} from "../variables/columnsData.js";
 import {useState} from "react";
 
-function Services() {
+function ServicesPanel() {
     const [data, setData] = useState([]);
     return (
         <>
@@ -28,4 +28,4 @@ function Services() {
     )
 }
 
-export default Services
+export default ServicesPanel

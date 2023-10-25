@@ -15,15 +15,15 @@ function AboutUs() {
             </Helmet>
 
             <AppLayout>
-                <div className="flex flex-col pl-5">
+                <div className="flex flex-col">
                     <div className="flex-col overflow-hidden self-center relative flex min-h-[1024px] w-full grow pt-10 max-md:max-w-full">
                         <img
                             loading="lazy"
                             src={Banner}
-                            className="absolute h-full w-full object-cover object-center"
+                            className="absolute h-full w-full object-cover object-center brightness-50"
                             alt=""/>
                         <div className="relative self-center flex w-full max-w-[1476px] grow flex-col mt-40 max-md:max-w-full">
-                            <div className="items-start backdrop-blur-sm flex w-[900px] max-w-full flex-col px-5 py-10 rounded-3xl">
+                            <div className="items-start  flex w-[900px] max-w-full flex-col px-5 py-10 rounded-3xl">
                                 <div className="items-start self-center flex w-[612px] max-w-full flex-col">
                                     <div className="items-start flex w-full flex-col max-md:max-w-full">
                                         <div className="justify-center items-start flex w-20 max-w-full gap-0">
@@ -33,11 +33,11 @@ function AboutUs() {
                                             <div className="bg-orange-400 self-stretch flex w-4 h-4 flex-col" />
                                             <div className="bg-indigo-600 self-stretch flex w-4 h-4 flex-col" />
                                         </div>
-                                        <div className="text-black text-6xl font-extrabold leading-[112.5%] w-full mt-6 max-md:max-w-full max-md:text-4xl">
+                                        <div className="text-white text-6xl font-extrabold leading-[112.5%] w-full mt-6 max-md:max-w-full max-md:text-4xl">
                                            درباره حله
                                         </div>
                                     </div>
-                                    <div className="text-black text-2xl w-[586px] max-w-full mt-10">
+                                    <div className="text-white text-2xl w-[586px] max-w-full mt-10">
                                       توضیحات برند
                                     </div>
 
@@ -50,10 +50,10 @@ function AboutUs() {
                                             <div className="items-start flex grow flex-col max-md:mt-12">
                                              <FaStairs  className="text-white h-8 aspect-square object-cover object-center w-14 overflow-hidden shrink-0"/>
 
-                                                <h2 className="text-white text-2xl font-extrabold mt-2">
+                                                <h2 className="text-white text-xl font-extrabold mt-2">
                                                     دسترسی سریع
                                                 </h2>
-                                                <p className="text-white text-lg w-[231px] max-w-full mt-2">
+                                                 <p className="text-white text-lg w-[250px] max-w-full mt-2 text-justify">
                                                     با حله می تواتید به سرعت و کمترین زمان متخصص مورد نیاز خود را پیدا کنید.
                                                 </p>
                                             </div>
@@ -63,10 +63,10 @@ function AboutUs() {
                                                 <IoGitCommit className="text-white h-8 aspect-square object-cover object-center w-14 overflow-hidden shrink-0"
                                                 />
 
-                                                <h2 className="text-white text-2xl font-extrabold mt-2">
+                                                <h2 className="text-white text-xl font-extrabold mt-2">
                                                     آنالیز کیفیت کار
                                                 </h2>
-                                                <p className="text-white text-lg w-[231px] max-w-full mt-2">
+                                                 <p className="text-white text-lg w-[250px] max-w-full mt-2 text-justify">
                                                     با حله می توانید کیفیت کار هر متخصص را با توجه به نظرات مشتریان قبل بسنجید.
                                                 </p>
                                             </div>
@@ -76,10 +76,10 @@ function AboutUs() {
                                                 <IoBusiness className="text-white h-8 aspect-square object-cover object-center w-14 overflow-hidden shrink-0"
                                                 />
 
-                                                <h2 className="text-white text-2xl font-extrabold mt-2">
+                                                <h2 className="text-white text-xl font-extrabold mt-2">
                                                     مقایسه قیمت و انتخاب مناسب
                                                 </h2>
-                                                <p className="text-white text-lg w-[231px] max-w-full mt-2">
+                                                <p className="text-white text-lg w-[250px] max-w-full mt-2 text-justify">
                                                     با حله می توانید با مقایسه قیمت های مختلف متخصصین و ارزیابی کیفیت کار آن ها، بهترین قیمت را انتخاب کنید!
                                                 </p>
                                             </div>
@@ -89,10 +89,10 @@ function AboutUs() {
                                                 <GiProgression   className="text-white h-8 aspect-square object-cover object-center w-14 overflow-hidden shrink-0"
                                                 />
 
-                                                <h2 className="text-white text-2xl font-extrabold mt-2">
+                                                <h2 className="text-white text-xl font-extrabold mt-2">
                                                     تلاش برای بهتر شدن
                                                 </h2>
-                                                <p className="text-white text-lg w-[231px] max-w-full mt-2">
+                                                 <p className="text-white text-lg w-[250px] max-w-full mt-2 text-justify">
                                                     با حله متخصصین سعی دارند با انجام کار با کیفیت بالا و قیمیت پایین به ستاره های خود بیافزایند و ترفیع رتبه پیدا کنند.
                                                 </p>
                                             </div>
@@ -127,7 +127,7 @@ function AboutUs() {
                                     src="https://avatars.githubusercontent.com/u/53135000?v=4"
                                     className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
                             </div>
-                            <h5 className="mb-4 text-xl font-semibold">محمد عبدالرحمانی</h5>
+                            <h5 className="mb-4 text-xl font-semibold">یونسی</h5>
                             <h6 className="mb-4 font-semibold text-primary dark:text-primary-500">
                                 Web Developer
                             </h6>
@@ -144,7 +144,7 @@ function AboutUs() {
                                     src="https://avatars.githubusercontent.com/u/53135000?v=4"
                                     className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
                             </div>
-                            <h5 className="mb-4 text-xl font-semibold">محمد عبدالرحمانی</h5>
+                            <h5 className="mb-4 text-xl font-semibold">محمد یونسی</h5>
                             <h6 className="mb-4 font-semibold text-primary dark:text-primary-500">
                                 Web Developer
                             </h6>
@@ -161,7 +161,7 @@ function AboutUs() {
                                     src="https://avatars.githubusercontent.com/u/53135000?v=4"
                                     className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
                             </div>
-                            <h5 className="mb-4 text-xl font-semibold">محمد عبدالرحمانی</h5>
+                            <h5 className="mb-4 text-xl font-semibold">محمد رضایی</h5>
                             <h6 className="mb-4 font-semibold text-primary dark:text-primary-500">
                                 Web Developer
                             </h6>
@@ -228,7 +228,7 @@ function AboutUs() {
                                                 <div className="text-black text-lg font-bold">
                                                     متن پیام شما
                                                 </div>
-                                                <TextField rows="10" cols="100" className="bg-white text-black text-opacity-50 text-lg font-bold items-start bg-zinc-700 bg-opacity-50 w-full grow mt-2.5 pl-6 pr-5 pt-4 pb-48 rounded-2xl max-md:max-w-full"
+                                                <TextField rows="10" cols="100"  areaBg={true} className=" text-black text-opacity-50 text-lg font-bold items-start p-4 w-full grow mt-2.5 pl-6 pr-5 pt-4 pb-48 rounded-2xl max-md:max-w-full"
                                                            placeholder="متن نظر شما"
                                                 />
                                             </div>

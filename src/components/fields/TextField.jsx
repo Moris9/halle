@@ -2,7 +2,7 @@
 import React from "react";
 
 function InputField(props) {
-  const { label, id, extra, placeholder, cols, rows, state, disabled } = props;
+  const { label, id, extra, placeholder, cols, rows, state, disabled ,areaBg } = props;
 
   return (
     <div className={`${extra}`}>
@@ -25,7 +25,8 @@ function InputField(props) {
               : state === "success"
               ? "!border-green-500 text-green-500 placeholder:text-green-500 dark:!border-green-400 dark:!text-green-400 dark:placeholder:!text-green-400"
               : disabled === true
-              ? "!border-none !bg-gray-100 dark:!bg-white/5 dark:placeholder:!text-[rgba(255,255,255,0.15)]"
+                            ? "!border-none !bg-gray-100 dark:!bg-white/5 dark:placeholder:!text-[rgba(255,255,255,0.15)]" 
+                            : areaBg == true  ? "!bg-white"
               : "border-gray-200 dark:!border-white/10 dark:text-white"
           }`}
           name={id}

@@ -1,10 +1,16 @@
 import AppLayout from "../layouts/AppLayout.jsx";
 import {Helmet} from "react-helmet";
 import {useState} from "react";
-import {BiHome} from "react-icons/bi";
+import {BiCar, BiHealth, BiHome, BiLaptop} from "react-icons/bi";
 import {Link} from "react-router-dom";
 import worker_1 from "../assets/worker_1.svg"
 import worker_2 from "../assets/worker_2.svg"
+import {BsPersonCircle} from "react-icons/bs";
+import {BuildingOfficeIcon} from "@heroicons/react/20/solid/index.js";
+import {FaHandshake} from "react-icons/fa";
+import {MdWork} from "react-icons/md";
+import {GiVacuumCleaner} from "react-icons/gi";
+import SerchIcon from "../assets/search.svg";
 
 function Home() {
     const [activeTab, setActiveTab] = useState('page1');
@@ -14,17 +20,17 @@ function Home() {
     return (
         <>
             <Helmet>
-                <title>خدمت از ما</title>
+                <title>حله</title>
             </Helmet>
 
             <AppLayout>
                 <div className="mx-auto">
-                    <section className="p-14 flex ">
-                        <ul className="text-center text-gray-500 bg-gray-100 rounded-lg p-1 self-center">
+                    <section className="px-14">
+                        <ul className="text-center flex gap-4 text-gray-900 p-10 self-center">
                             <li>
                                 <span
                                     onClick={() => switchTab('page1')}
-                                    className={`flex justify-center cursor-pointer py-4 ${activeTab === 'page1' ? 'bg-white border-b-2 border-indigo-500 rounded-lg shadow text-indigo-900' : ''}`}
+                                    className={` justify-center cursor-pointer py-4 ${activeTab === 'page1' ? 'bg-white border-b-2 border-indigo-500 shadow text-indigo-900' : ''}`}
                                 >
                                    یافتن متخصصین
                                 </span>
@@ -32,7 +38,7 @@ function Home() {
                             <li>
                                 <span
                                     onClick={() => switchTab('page2')}
-                                    className={`flex justify-center mt-5 cursor-pointer py-4 ${activeTab === 'page2' ? 'bg-white border-b-2 border-indigo-500 rounded-lg shadow text-indigo-900' : ''}`}
+                                    className={` justify-center mt-5 cursor-pointer py-4 ${activeTab === 'page2' ? 'bg-white border-b-2 border-indigo-500  shadow text-indigo-900' : ''}`}
                                 >
                                     ثبت نام متخصصین
                                 </span>
@@ -46,32 +52,38 @@ function Home() {
                                 </h1>
                                 <div className="flex gap-12">
                                     <div className="self-center max-w-2xl">
-                                        <p className="text-black mt-10 leading-10 text-justify">وقت کم میاری؟ ⏰ نیاز داری به یک تخصص ولی پیدا نمی کنی؟ دامنه ی انتخابت برای پیدا کردن یک تخصص کوچیکه؟ تفاوت قیمت ها زیاده؟</p>
+                                        <p className="text-black leading-10 text-justify">وقت کم میاری؟ ⏰ نیاز داری به یک تخصص ولی پیدا نمی کنی؟ دامنه ی انتخابت برای پیدا کردن یک تخصص کوچیکه؟ تفاوت قیمت ها زیاده؟</p>
                                         <p className="text-black mt-2 leading-10 text-justify">ما در اینجا همه این مشکلات را از بین می بریم. به راحتی بهترین متخصص برای رفع نیازت با بهترین قیمت پیدا کن.</p>
-                                    </div>
-                                    <div>
-                                        <img className="w-2/3" src={worker_1} loading="lazy" alt="worker"/>
-                                    </div>
-                                </div>
 
-                                <div className=''>
-                                    <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
-                                        <div className="grid place-items-center h-full w-12 text-gray-300">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                            </svg>
+                                            <div className="relative flex items-center w-full overflow-hidden mt-5">
+                                                <div className="flex w-[723px] max-w-full items-start justify-between gap-5 ml-4 max-md:flex-wrap max-md:justify-center">
+                                                    <div className="self-center align-middle rounded-lg flex w-full border-2 border-black max-w-full justify-between gap-5 my-auto">
+                                                        <input
+                                                            className="peer-[${1}]:${0}  py-10 h-full w-full outline-none text-sm text-gray-700 pr-2"
+                                                            type="text"
+                                                            id="search"
+                                                            placeholder="به چه خدمتی نیاز دارید؟" />
+
+                                                        <button className=" px-2 py-4">
+                                                            <img
+                                                                loading="lazy"
+                                                                srcSet={SerchIcon}
+                                                                className="aspect-square object-cover object-center w-11 overflow-hidden self-center max-w-full my-auto"
+                                                            />
+                                                        </button>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <input
-                                            className="peer h-full w-full outline-none text-sm text-gray-700 pr-2 shadow-xl"
-                                            type="text"
-                                            id="search"
-                                            placeholder="به چه خدمتی نیاز دارید؟" />
-                                        <button className="bg-blue-700 text-white px-2 py-4 w-full">
-                                            جست و جو
-                                        </button>
+                                    <div className="flex justify-end">
+                                        <img className="w-4/5" src={worker_1} loading="lazy" alt="worker"/>
                                     </div>
                                 </div>
+
                             </div>
                         )}
 
@@ -82,47 +94,33 @@ function Home() {
                                 </h1>
                                 <div className="flex gap-12">
                                     <div className="self-center">
-                                        <p className="text-black mt-10 leading-10 text-justify">می خواهی مشتری های بیشتری داشته باشی؟ کیفیت کارت بالاست ولی کار کم؟ میخوای اسم در کنی؟ قیمتت مناسب ارائه میدی ولی بازخورد باید را نداری؟ ما حلش می کنیم! با ما باش تا مشتری را به راحتی پیدات کنه و سفارش هات چند برابر باشه!</p>
+                                        <p className="text-black leading-10 text-justify w-[74.666667%]">می خواهی مشتری های بیشتری داشته باشی؟ کیفیت کارت بالاست ولی کار کم؟ میخوای اسم در کنی؟ قیمتت مناسب ارائه میدی ولی بازخورد باید را نداری؟ ما حلش می کنیم! با ما باش تا مشتری را به راحتی پیدات کنه و سفارش هات چند برابر باشه!</p>
+
+                                        <div className="flex">
+                                            <a href="/providers" className="bg-transparent text-center w-2/3 mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                                شروع کنید
+                                            </a>
+                                        </div>
                                     </div>
                                     <div className="my-5">
-                                        <img className="w-3/4" src={worker_2} alt="worker"/>
+                                        <img className="w-full" src={worker_2} alt="worker"/>
                                     </div>
                                 </div>
-                                <div className="flex">
-                                    <a href="/providers" className="bg-transparent text-center w-full mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                                        شروع کنید
-                                    </a>
-                                </div>
+
 
                             </div>
                         )}
                     </section>
                     <section className="mt-10 bg-blue-200  py-10">
-                        <div className="flex justify-center gap-10 px-14 max-sm:px-5 w-full relative">
-                            <a href="" className="text-center">
-                                <BiHome className="h-10 w-10"/>
-                                <span className="">
-                                    خانه
-                                </span>
-                            </a>
-                            <a href="" className="text-center">
-                                <BiHome className="h-10 w-10"/>
-                                <span className="">
-                                    خانه
-                                </span>
-                            </a>
-                            <a href="" className="text-center">
-                                <BiHome className="h-10 w-10"/>
-                                <span className="">
-                                    خانه
-                                </span>
-                            </a>
-                            <a href="" className="text-center">
-                                <BiHome className="h-10 w-10"/>
-                                <span className="">
-                                    خانه
-                                </span>
-                            </a>
+                        <div className="flex gap-10 container justify-center mt-6">
+                            <span className="text-center"><BsPersonCircle className="m-5 h-10 w-10"/>زیبایی</span>
+                            <span className="text-center"><BuildingOfficeIcon className="m-5 h-10 w-10"/>ساختمان</span>
+                            <span className="text-center"><BiLaptop className="m-5 h-10 w-10"/>دیجیتال</span>
+                            <span className="text-center"><span className="flex justify-center"><BiCar className="m-5 h-10 w-10"/></span>خوردو و حمل و نقل</span>
+                            <span className="text-center"><FaHandshake className="m-5 h-10 w-10"/>کسب و کار</span>
+                            <span className="text-center"><BiHealth className="m-5 h-10 w-10"/>سلامت</span>
+                            <span className="text-center"><MdWork className="m-5 h-10 w-10"/>تاسیسات</span>
+                            <span className="text-center"><GiVacuumCleaner className="m-5 h-10 w-10"/>نظافت</span>
                         </div>
                     </section>
                     <section className="mt-10 py-10 px-6">

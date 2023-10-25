@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import {Link} from "react-router-dom";
 
 const navigation = [
     { name: 'صفحه اصلی', href: '/', current: true },
@@ -39,14 +40,14 @@ function Navbar() {
                                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                                             alt="Your Company"
                                         />
-                                        <span className="text-black mr-5">وب سایت خدمت از ما</span>
+                                        <span className="text-black mr-5">وب سایت حله</span>
                                     </div>
                                     <div className="hidden sm:mr-6 sm:block">
                                         <div className="flex space-x-4">
                                             {navigation.map((item) => (
-                                                <a
+                                                <Link
                                                     key={item.name}
-                                                    href={item.href}
+                                                    to={item.href}
                                                     className={classNames(
                                                         item.current ? 'text-black' : 'text-gray-800 hover:text-gray-500',
                                                         'px-3 py-2 text-sm font-medium'
@@ -54,18 +55,18 @@ function Navbar() {
                                                     aria-current={item.current ? 'page' : undefined}
                                                 >
                                                     {item.name}
-                                                </a>
+                                                </Link>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                    <a
-                                        href="/login"
+                                    <Link
+                                        to="/login"
                                         className="relative cursor-pointer rounded-full bg-blue-500 text-sm text-black hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800 p-2"
                                     >
                                         ورود / ثبت نام
-                                    </a>
+                                    </Link>
 
                                     {/* Profile dropdown */}
                                     {/*<Menu as="div" className="relative ml-3">*/}

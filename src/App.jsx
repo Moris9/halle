@@ -6,7 +6,7 @@ import Users from "./view/admin/Users.jsx";
 import Experts from "./view/admin/Experts.jsx";
 import Comments from "./view/admin/Comments.jsx";
 import Category from "./view/admin/categories/Category.jsx";
-import Services from "./view/admin/services/Services.jsx";
+import Services from "./view/Services.jsx";
 import SubCategory from "./view/admin/subCategories/SubCategory.jsx";
 import ExpertDashboard from "./view/Expert/index.jsx";
 import VIP from "./view/Expert/VIP.jsx";
@@ -18,11 +18,13 @@ import SingUp from "./view/auth/Singup.jsx";
 import AboutUs from "./view/AboutUs.jsx";
 import ExpertRegister from "./view/auth/ExpertRegister.jsx";
 import Price from "./view/Price.jsx";
+import ServicesPanel from "./view/admin/services/Services.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
         { element: <AboutUs/>, path: '/about-us' },
         { element: <ExpertRegister/> , path: "/providers"},
+        { element: <Services/> , path : '/services'},
         { element: <SignIn/> , path: '/login'},
         { element: <Price/> , path: "/prices"},
         { element: <SingUp/> , path: '/register'},
@@ -31,7 +33,7 @@ function App() {
         { element: <Experts/>, path: '/admin/experts' },
         { element: <Category/>, path: '/admin/categories' },
         { element: <Comments/>, path: '/admin/comments' },
-        { element: <Services/>, path: '/admin/services' },
+        { element: <ServicesPanel/>, path: '/admin/services' },
         { element: <SubCategory/>, path: '/admin/sub-categories' },
         { element: <ExpertDashboard/> , path: '/expert/dashboard'},
         { element: <VIP/> , path: '/expert/vip'},

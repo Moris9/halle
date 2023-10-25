@@ -7,6 +7,10 @@ import {MdWork} from "react-icons/md";
 import {BsPersonCircle} from "react-icons/bs";
 import InputField from "../../components/fields/InputField.jsx";
 import RegisterImage from "../../assets/register.svg"
+import Worker from "../../assets/images/worker.jpg"
+import ProvidersPhone from "../../assets/providers-phone.svg";
+import ProvidersCall from "../../assets/providers-call.svg";
+import ProvidersMoney from "../../assets/providers-money.svg"
 function ExpertRegister() {
     return (
         <>
@@ -21,9 +25,6 @@ function ExpertRegister() {
                             <li>
                                 دریافت کار با هر مهارتی در محدوده‌ی انتخابی خودتان
                             </li>
-                            <li>
-                                بدون نیاز به پرداخت کمیسیون یا حق عضویت
-                            </li>
                         </ul>
                     </div>
 
@@ -35,13 +36,114 @@ function ExpertRegister() {
                             <span className="text-center"><BsPersonCircle className="m-5 h-10 w-10"/>زیبایی</span>
                             <span className="text-center"><BuildingOfficeIcon className="m-5 h-10 w-10"/>ساختمان</span>
                             <span className="text-center"><BiLaptop className="m-5 h-10 w-10"/>دیجیتال</span>
-                            <span className="text-center"><BiCar className="m-5 h-10 w-10"/>خوردو و حمل و نقل</span>
+                            <span className="text-center"><span className="flex justify-center"><BiCar className="m-5 h-10 w-10"/></span>خوردو و حمل و نقل</span>
                             <span className="text-center"><FaHandshake className="m-5 h-10 w-10"/>کسب و کار</span>
                             <span className="text-center"><BiHealth className="m-5 h-10 w-10"/>سلامت</span>
                             <span className="text-center"><MdWork className="m-5 h-10 w-10"/>تاسیسات</span>
                             <span className="text-center"><GiVacuumCleaner className="m-5 h-10 w-10"/>نظافت</span>
                         </div>
                     </section>
+                </div>
+                    <section className="flex-col overflow-hidden relative flex min-h-[807px]">
+                            <img
+                                loading="lazy"
+                                srcSet={Worker}
+                                className="absolute z-[-1] brightness-50 h-full w-full object-cover object-center inset-0"
+                             alt="وب سایت خدماتی حله"/>
+                            <div className="relative self-stretch flex w-full flex-col pt-52 pb-28 px-5 max-md:max-w-full">
+                                <div className="flex mb-0 w-[487px] max-w-full flex-col mr-48 max-md:mr-2.5 max-md:mb-2.5">
+                                    <div className="text-white text-5xl font-semibold max-md:max-w-full max-md:text-4xl">
+                                        چگونه در <span className="text-blue-700">حله</span> درآمد کسب کنیم؟
+                                    </div>
+                                    <p className="text-white text-xl leading-[166.667%] max-w-[434px] mt-11 max-md:mt-10">
+                                        با حله هیچ وقت بیکار نیستی!
+                                    </p>
+                                    <div dir="ltr"  className="flex w-[273px] max-w-full items-start justify-between gap-5 mt-3.5">
+                                        <div className="text-sky-500 text-base justify-center items-center rounded shadow-[0px_20px_40px_-12px_rgba(0,0,0,0.25)] bg-white w-[167px] max-w-full mt-7 px-4 py-3">
+                                            دریافت سفارشات
+                                        </div>
+                                        <svg  className="aspect-[1.27] object-cover object-center w-20 overflow-hidden max-w-full"
+                                                width="80" height="64" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M77.7924 0.804141C72.2724 32.7768 38.3716 48.3069 2.98076 51.8381C2.37304 51.8997 1.93609 52.3666 2.00891 52.8809C2.08172 53.3951 2.63341 53.7648 3.24113 53.7032C39.6233 50.0749 74.314 33.9428 79.988 1.07429C80.0776 0.562383 79.6575 0.0860309 79.0498 0.0101934C78.4448 -0.0656442 77.882 0.289868 77.7924 0.804141Z" fill="white"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.77523 52.705C5.34915 51.731 7.34036 50.527 7.56161 50.3848C13.5576 46.5313 18.5258 42.0972 22.9003 36.8952C23.256 36.4734 23.1383 35.8856 22.6398 35.5847C22.1413 35.2837 21.4469 35.3833 21.0912 35.8051C16.8511 40.8507 12.0342 45.1521 6.21739 48.8895C5.87852 49.1075 1.40034 51.8115 0.543362 52.4159C0.19049 52.6623 0.0813442 52.8946 0.0617402 52.9515C-0.0558838 53.2501 0.0141086 53.4847 0.109328 53.6553C0.21855 53.8473 0.490135 54.127 1.01664 54.2692C1.56835 54.4161 2.79506 54.4825 3.10312 54.5204C7.74927 55.1034 12.9948 55.4115 17.7697 56.5301C22.3235 57.5965 26.4542 59.4024 29.1036 63.0213C29.4256 63.4621 30.1118 63.5972 30.6327 63.3246C31.1536 63.0521 31.3133 62.4715 30.9912 62.0307C28.0282 57.9852 23.452 55.9115 18.3634 54.7194C13.6164 53.6079 8.41858 53.2714 3.77523 52.705Z" fill="white"/>
+                                        </svg>
+
+
+                                    </div>
+                                    <div className="flex max-w-full justify-between items-baseline gap-5 mt-20 max-md:mt-10">
+                                        <div className="px-5">
+                                            <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                                                <div className="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
+                                                    <div className="items-start border flex w-full grow flex-col flex-1 mx-auto pt-10 pb-14 px-5 rounded-xl  max-md:mt-9">
+                                                        <div className="self-center flex w-[375px] max-w-full flex-col">
+                                                            <div className="justify-center items-center flex w-[55px] max-w-full flex-col">
+                                                                <img
+                                                                    loading="lazy"
+                                                                    srcSet={ProvidersPhone}
+                                                                    className="aspect-square object-cover object-center w-full overflow-hidden self-stretch grow scale-[2.2]"
+                                                                />
+                                                            </div>
+                                                            <h3 className="text-white text-2xl font-medium leading-[166.667%] w-full mt-4">
+                                                                دریافت سفارش در اپلیکیشن
+                                                            </h3>
+                                                            <p className="text-white text-justify text-opacity-80 text-sm mt-5">
+                                                                ما مشتریانی مطابق با تخصصتان به شما معرفی میکنیم. تعیین اجرتها و زمان در دسترس بودن کاملا در اختیار شماست. می توانید برای هر سفارشی که مایلید پیشنهاد انجام کار بفرستید.
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
+                                                    <div className="items-start border flex w-full grow flex-col flex-1 mx-auto pt-10 pb-14 px-5 rounded-xl max-md:mt-9">
+                                                        <div className="self-center flex w-[275px] max-w-full flex-col">
+                                                            <div className="justify-center items-center flex w-[55px] max-w-full flex-col">
+                                                                <img
+                                                                    loading="lazy"
+                                                                    srcSet={ProvidersCall}
+                                                                    className="aspect-square object-cover object-center w-full overflow-hidden self-stretch grow scale-[2.2]"
+                                                                />
+                                                            </div>
+                                                            <h3 className="text-white text-2xl font-medium leading-[166.667%] w-full mt-4">
+                                                                تماس با مشتریان
+                                                            </h3>
+                                                            <p className="text-white text-justify text-opacity-80 text-sm mt-5">
+                                                                پیشنهاد شما به مشتریان نمایش داده می شود و اطلاعات تماستان در اختیارشان قرار می گیرد. از طریق چت هم می توانید بیشتر در مورد جزییات کار صحبت کنید.
+
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
+                                                    <div className="items-start border flex w-full grow flex-col flex-1 mx-auto pt-10 pb-14 px-5 rounded-xl max-md:mt-9">
+                                                        <div className="self-center flex w-[375px] max-w-full flex-col">
+                                                            <div className="justify-center items-center flex w-[55px] max-w-full flex-col">
+                                                                <img
+                                                                    loading="lazy"
+                                                                    srcSet={ProvidersMoney}
+                                                                    className="aspect-square scale-[2.2] object-cover object-center w-full overflow-hidden self-stretch grow"
+                                                                />
+                                                            </div>
+                                                            <h3 className="text-white text-2xl font-medium leading-[166.667%] w-full mt-4">
+                                                                تمام درآمد کار متعلق به شماست
+                                                            </h3>
+                                                            <p className="text-white text-justify text-opacity-80 text-sm mt-5">
+                                                                پس از به توافق رسیدن و انجام کار، مشتری مستقیما وجه را به شما پرداخــت می کند و خدمت از ما هیچ درصدی از اجرت کار بر نمی دارد.
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
                     <section className="mt-10">
                         <div className="justify-end items-center bg-sky-100 flex flex-col p-5">
@@ -52,7 +154,7 @@ function ExpertRegister() {
                                             loading="lazy"
                                             src={RegisterImage}
                                             className="aspect-[0.99] object-cover object-center w-full overflow-hidden my-auto max-md:max-w-full max-md:mt-52"
-                                        />
+                                         alt="ثبت نام در حله"/>
                                     </div>
                                     <div className="flex flex-col items-stretch w-[65%] ml-5 max-md:w-full">
                                         <div className="bg-white flex grow flex-col w-full mx-auto px-5 py-10 rounded-3xl max-md:max-w-full max-md:mt-12">
@@ -146,7 +248,7 @@ function ExpertRegister() {
                         </div>
 
                     </section>
-                </div>
+
             </AppLayout>
 
         </>

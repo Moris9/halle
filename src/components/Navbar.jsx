@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {Link} from "react-router-dom";
-
+import logo from "../assets/logo/PNG/Logo/Hale Logo Fr.png"
 const navigation = [
     { name: 'صفحه اصلی', href: '/', current: true },
     { name: 'قیمت خدمات', href: '/prices', current: false },
@@ -16,10 +16,10 @@ function classNames(...classes) {
 function Navbar() {
     return (
         <>
-            <Disclosure as="nav" className="bg-white w-full">
+            <Disclosure as="nav" className="bg-white w-full pt-6">
                 {({ open }) => (
                     <>
-                        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                        <div className="mx-auto px-2 pt-5 sm:px-6 lg:px-8">
                             <div className="relative flex h-16 items-center justify-between">
                                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                     {/* Mobile menu button*/}
@@ -33,16 +33,15 @@ function Navbar() {
                                         )}
                                     </Disclosure.Button>
                                 </div>
-                                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                    <div className="flex flex-shrink-0 items-center">
+                                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mr-20">
+                                    <Link to="/" className="flex flex-shrink-0 items-center">
                                         <img
-                                            className="h-8 w-auto"
-                                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                            className="h-15 w-24 scale-[2.8]"
+                                            src={logo}
                                             alt="Your Company"
                                         />
-                                        <span className="text-black mr-5">وب سایت حله</span>
-                                    </div>
-                                    <div className="hidden sm:mr-6 sm:block">
+                                    </Link>
+                                    <div className="hidden sm:mr-12 sm:block">
                                         <div className="flex space-x-4">
                                             {navigation.map((item) => (
                                                 <Link

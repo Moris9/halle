@@ -11,6 +11,7 @@ import {FaHandshake} from "react-icons/fa";
 import {MdWork} from "react-icons/md";
 import {GiVacuumCleaner} from "react-icons/gi";
 import SerchIcon from "../assets/search.svg";
+import MainCategories from "../components/MainCategories.jsx";
 
 function Home() {
     const [activeTab, setActiveTab] = useState('page1');
@@ -69,7 +70,7 @@ function Home() {
                                                                 loading="lazy"
                                                                 srcSet={SerchIcon}
                                                                 className="aspect-square object-cover object-center w-11 overflow-hidden self-center max-w-full my-auto"
-                                                            />
+                                                             alt="حله"/>
                                                         </button>
 
                                                     </div>
@@ -112,16 +113,7 @@ function Home() {
                         )}
                     </section>
                     <section className="mt-10 bg-blue-200  py-10">
-                        <div className="flex gap-10 container justify-center mt-6">
-                            <span className="text-center"><BsPersonCircle className="m-5 h-10 w-10"/>زیبایی</span>
-                            <span className="text-center"><BuildingOfficeIcon className="m-5 h-10 w-10"/>ساختمان</span>
-                            <span className="text-center"><BiLaptop className="m-5 h-10 w-10"/>دیجیتال</span>
-                            <span className="text-center"><span className="flex justify-center"><BiCar className="m-5 h-10 w-10"/></span>خوردو و حمل و نقل</span>
-                            <span className="text-center"><FaHandshake className="m-5 h-10 w-10"/>کسب و کار</span>
-                            <span className="text-center"><BiHealth className="m-5 h-10 w-10"/>سلامت</span>
-                            <span className="text-center"><MdWork className="m-5 h-10 w-10"/>تاسیسات</span>
-                            <span className="text-center"><GiVacuumCleaner className="m-5 h-10 w-10"/>نظافت</span>
-                        </div>
+                       <MainCategories/>
                     </section>
                     <section className="mt-10 py-10 px-6">
                         <h2 className="text-4xl font-bold">خدمات محبوب در زنجان</h2>

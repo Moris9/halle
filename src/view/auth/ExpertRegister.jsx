@@ -11,6 +11,9 @@ import Worker from "../../assets/images/worker.jpg"
 import ProvidersPhone from "../../assets/providers-phone.svg";
 import ProvidersCall from "../../assets/providers-call.svg";
 import ProvidersMoney from "../../assets/providers-money.svg"
+import GuideImg from "../../assets/images/img.png"
+import GuideBg from "../../assets/guide.svg"
+import MainCategories from "../../components/MainCategories.jsx";
 function ExpertRegister() {
     return (
         <>
@@ -32,16 +35,7 @@ function ExpertRegister() {
                         <h2 className="text-2xl text-center">
                             در <span className="text-blue-700">حله</span> مشتری ها به دنبال خدمات زیر هستند
                         </h2>
-                        <div className="flex gap-10 container justify-center mt-6">
-                            <span className="text-center"><BsPersonCircle className="m-5 h-10 w-10"/>زیبایی</span>
-                            <span className="text-center"><BuildingOfficeIcon className="m-5 h-10 w-10"/>ساختمان</span>
-                            <span className="text-center"><BiLaptop className="m-5 h-10 w-10"/>دیجیتال</span>
-                            <span className="text-center"><span className="flex justify-center"><BiCar className="m-5 h-10 w-10"/></span>خوردو و حمل و نقل</span>
-                            <span className="text-center"><FaHandshake className="m-5 h-10 w-10"/>کسب و کار</span>
-                            <span className="text-center"><BiHealth className="m-5 h-10 w-10"/>سلامت</span>
-                            <span className="text-center"><MdWork className="m-5 h-10 w-10"/>تاسیسات</span>
-                            <span className="text-center"><GiVacuumCleaner className="m-5 h-10 w-10"/>نظافت</span>
-                        </div>
+                        <MainCategories/>
                     </section>
                 </div>
                     <section className="flex-col overflow-hidden relative flex min-h-[807px]">
@@ -144,6 +138,128 @@ function ExpertRegister() {
                                 </div>
                             </div>
                         </section>
+
+                <section className="flex-col overflow-hidden relative flex min-h-[888px] px-5">
+                    <img
+                        loading="lazy"
+                        srcSet={GuideImg}
+                        className="absolute z-[-1] h-full w-full object-cover object-center inset-0"
+                    />
+                    <img
+                        loading="lazy"
+                        srcSet={GuideBg}
+                        className="absolute z-[-1] h-full w-full object-cover object-center inset-0"
+                    />
+                    <div className="relative self-center w-[739px] max-w-full mt-24 mb-24 max-md:my-10">
+                        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                            <div className="flex flex-col items-stretch w-[96%] max-md:w-full max-md:ml-0" >
+                                <div className="relative flex grow flex-col max-md:max-w-full max-md:mt-10">
+                                    <h2 className="text-white text-center text-5xl font-semibold self-center max-w-[527px] ml-6 max-md:max-w-full max-md:text-4xl">
+                                        همکار و همراهتان هستیم
+                                    </h2>
+                                    <p className="text-white mt-5">
+                                        ما به شما آموزش‌های لازم را می‌دهیم و از شما حمایت می‌کنیم تا در کسب درآمد موفق باشید
+                                        هر زمانی که سوالی دارید، می توانید با ما تماس بگیرید یا چت کنید
+                                    </p>
+                                    <div className="w-[601px] max-w-full mt-11 max-md:mt-10" >
+                                        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                                            <div className="flex flex-col items-stretch w-[6%] max-md:w-full max-md:ml-0">
+                                                <div className="text-white text-2xl font-semibold self-stretch bg-rose-500 w-[38px] h-[38px] max-w-full mx-auto flex text-center  pr-3  rounded-full">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col items-stretch w-[94%] ml-5 max-md:w-full max-md:ml-0">
+                                                <div className="bg-white flex grow flex-col w-full mt-5 mx-auto pl-5 pr-5 py-8 rounded-xl max-md:max-w-full">
+                                                    <div className="flex w-[510px] max-w-full items-start justify-between gap-5 max-md:flex-wrap">
+
+                                                        <div className="flex flex-col grow shrink-0 basis-auto max-md:max-w-full">
+                                                            <div className="text-black text-center text-lg font-medium">
+                                                                پشتیبانی آنلاین و در دسترس
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="self-stretch mt-12 max-md:max-w-full max-md:mt-10">
+                                        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                                            <div className="flex flex-col items-stretch w-[5%] max-md:w-full max-md:ml-0">
+                                                <svg   className="aspect-[0.22] object-cover object-center w-[29px] overflow-hidden my-auto max-md:mt-10"
+                                                       width="30" height="130" viewBox="0 0 30 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.13304 1.48903C14.3046 10.4755 20.0215 23.1116 22.6019 36.8876C26.4984 57.6922 23.2459 81.101 17.222 98.6575C13.4372 109.692 7.18795 115.892 1.14041 125.802C0.895674 126.203 1.0223 126.727 1.42375 126.972C1.82305 127.216 2.34901 127.09 2.5916 126.688C8.70998 116.663 15.0022 110.373 18.8321 99.2092C24.9398 81.408 28.2244 57.6708 24.2743 36.5742C21.623 22.4182 15.7129 9.44938 5.26011 0.213842C4.90803 -0.097444 4.37136 -0.0652755 4.06008 0.2868C3.74879 0.638875 3.78096 1.17774 4.13304 1.48903Z" fill="white"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.68119 129.085C1.7048 129.051 1.85718 128.819 2.00531 128.638C2.615 127.887 3.80218 126.67 5.39081 125.223C10.7256 120.375 20.5687 112.969 28.6815 112.226C29.1495 112.183 29.493 111.769 29.4501 111.301C29.4071 110.833 28.9949 110.487 28.5269 110.53C20.0857 111.303 9.79603 118.92 4.24655 123.965C3.50376 124.641 2.84262 125.27 2.28445 125.83C2.76534 123.462 3.30626 121.112 3.87516 118.761C5.51532 111.994 5.53248 105.801 4.13491 98.9266C4.0426 98.4672 3.59179 98.1689 3.13238 98.2633C2.67296 98.3556 2.37459 98.8064 2.46905 99.2658C3.81294 105.882 3.80009 111.846 2.22219 118.359C1.47939 121.432 0.783797 124.508 0.202015 127.614C0.144051 127.924 0.0023748 128.729 0.000228 128.844C-0.0126528 129.506 0.524047 129.669 0.644268 129.699C0.702232 129.714 1.43216 129.858 1.68119 129.085ZM0.0817812 128.505C0.0753408 128.527 0.0667327 128.548 0.0602923 128.572C0.0645859 128.553 0.073194 128.531 0.0817812 128.505Z" fill="white"/>
+                                                </svg>
+
+
+                                            </div>
+                                            <div className="flex flex-col items-stretch w-[95%] ml-5 max-md:w-full max-md:ml-0">
+                                                <div className="flex grow flex-col max-md:max-w-full max-md:mt-7">
+                                                    <div className="self-stretch max-md:max-w-full">
+                                                        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                                                            <div className="flex flex-col items-stretch w-[6%] max-md:w-full max-md:ml-0">
+                                                                <div className="text-white text-2xl font-semibold self-stretch bg-blue-500 w-[38px] h-[38px] max-w-full mx-auto flex text-center  pr-3  rounded-full">
+                                                                    2
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex flex-col items-stretch w-[94%] ml-5 max-md:w-full max-md:ml-0">
+                                                                <div className="bg-white flex grow flex-col w-full mt-5 mx-auto pl-5 pr-5 py-8 rounded-xl max-md:max-w-full">
+                                                                    <div className="flex w-[509px] max-w-full items-start justify-between gap-5 max-md:flex-wrap">
+
+                                                                        <div className="flex flex-col grow shrink-0 basis-auto max-md:max-w-full">
+                                                                            <div className="text-black text-center text-lg font-medium">
+                                                                                آموزش گام به گام
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="self-stretch mt-12 max-md:max-w-full max-md:mt-10">
+                                                        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                                                            <div className="flex flex-col items-stretch w-[6%] max-md:w-full max-md:ml-0">
+                                                                <div className="text-white text-2xl font-semibold self-stretch bg-rose-500 w-[38px] h-[38px] max-w-full mx-auto flex text-center pr-3  rounded-full">                                                                    3
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex flex-col items-stretch w-[94%] ml-5 max-md:w-full max-md:ml-0">
+                                                                <div className="bg-white flex grow flex-col w-full mt-5 mx-auto px-5 py-8 rounded-xl max-md:max-w-full">
+                                                                    <div className="flex w-[507px] max-w-full items-start justify-between gap-5 max-md:flex-wrap">
+                                                                        <div className="flex flex-col grow shrink-0 basis-auto max-md:max-w-full">
+                                                                            <div className="text-black text-center text-lg font-medium">
+                                                                                مشاوره برای افزایش درآمد
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col items-stretch w-[4%] ml-5 max-md:w-full max-md:ml-0">
+                                <svg  className="aspect-[0.22] object-cover object-center w-[29px] overflow-hidden my-auto max-md:mt-10"
+                                       width="30" height="230" viewBox="0 0 30 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.3207 1.48903C15.1492 10.4755 9.43228 23.1116 6.85182 36.8876C2.95538 57.6922 6.20779 81.101 12.2317 98.6575C16.0165 109.692 22.2658 115.892 28.3133 125.802C28.5581 126.203 28.4314 126.727 28.03 126.972C27.6307 127.216 27.1047 127.09 26.8621 126.688C20.7438 116.663 14.4515 110.373 10.6216 99.2092C4.51397 81.408 1.22934 57.6708 5.17945 36.5742C7.83075 22.4182 13.7409 9.44938 24.1936 0.213842C24.5457 -0.097444 25.0824 -0.0652755 25.3937 0.2868C25.7049 0.638875 25.6728 1.17774 25.3207 1.48903Z" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27.7725 129.085C27.7489 129.051 27.5966 128.819 27.4484 128.639C26.8387 127.887 25.6516 126.67 24.0629 125.223C18.7281 120.376 8.88499 112.969 0.772238 112.226C0.304235 112.183 -0.0392704 111.769 0.00366592 111.301C0.0466022 110.833 0.458851 110.487 0.926853 110.53C9.36807 111.303 19.6577 118.92 25.2072 123.965C25.95 124.641 26.6111 125.27 27.1693 125.831C26.6884 123.463 26.1475 121.112 25.5786 118.761C23.9384 111.994 23.9213 105.801 25.3188 98.9269C25.4111 98.4675 25.8619 98.1691 26.3214 98.2636C26.7808 98.3559 27.0791 98.8067 26.9847 99.2661C25.6408 105.883 25.6537 111.846 27.2315 118.36C27.9743 121.432 28.6699 124.508 29.2517 127.615C29.3097 127.924 29.4514 128.729 29.4535 128.845C29.4664 129.506 28.9297 129.669 28.8095 129.699C28.7515 129.714 28.0216 129.858 27.7725 129.085ZM29.372 128.506C29.3784 128.527 29.387 128.548 29.3934 128.572C29.3891 128.553 29.3805 128.531 29.372 128.506Z" fill="white"/>
+                                </svg>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                     <section className="mt-10">
                         <div className="justify-end items-center bg-sky-100 flex flex-col p-5">

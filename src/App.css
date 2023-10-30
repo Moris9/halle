@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'sans';
-    src: url('assets/sans.ttf') format('woff'), url('assets/sans.ttf') format('truetype');
+    font-family: 'Anjoman_Bold';
+    src: url('assets/Anjoman_Bold.ttf') format('woff'), url('assets/Anjoman_Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-body {
-    font-family: sans, serif !important
+@font-face {
+    font-family: 'Sarbaz';
+    src: url('assets/Sarbaz.ttf') format('woff'), url('assets/Sarbaz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Anjoman_Bold, serif !important
+}
+p , body{
+    font-family: Sarbaz, serif !important
+
 }

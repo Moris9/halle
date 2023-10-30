@@ -126,12 +126,12 @@ function Home() {
                                 <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
                                     <div className="text-center">
                                         <h3 className="mb-10">
-                                            <Link className="text-white sm:text-4xl text-2xl font-extrabold  text-center"  to="/e-category">
+                                            <Link className="text-white sm:text-4xl text-2xl font-extrabold  text-center"  to="/services">
                                                 <span className="absolute inset-0"></span>
-                                                نظافت منزل   </Link>
+                                                تاسیسات</Link>
                                         </h3>
-                                        <a className="z-10 relative text-sm font-medium transition rounded-full pt-2 pb-2 px-4 bg-blue-800/70 text-blue-100 ring-1 ring-inset ring-blue-400/20 hover:bg-blue-400/10 hover:text-blue-300 hover:ring-blue-300" href="/login">
-                                            ثبت سفارش</a>
+                                        <Link className="z-10 relative text-sm font-medium transition rounded-full pt-2 pb-2 px-4 bg-blue-800/70 text-blue-100 ring-1 ring-inset ring-blue-400/20 hover:bg-blue-400/10 hover:text-blue-300 hover:ring-blue-300" href="/services">
+                                            ثبت سفارش</Link>
                                     </div>
 
                                 </div>

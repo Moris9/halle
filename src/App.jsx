@@ -19,12 +19,14 @@ import AboutUs from "./view/AboutUs.jsx";
 import ExpertRegister from "./view/auth/ExpertRegister.jsx";
 import Price from "./view/Price.jsx";
 import ServicesPanel from "./view/admin/services/Services.jsx";
+import MainService from "./view/MainService.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
         { element: <AboutUs/>, path: '/about-us' },
         { element: <ExpertRegister/> , path: "/providers"},
         { element: <Services/> , path : '/services'},
+        { element: <MainService/> , path : '/sub-services'},
         { element: <SignIn/> , path: '/login'},
         { element: <Price/> , path: "/prices"},
         { element: <SingUp/> , path: '/register'},

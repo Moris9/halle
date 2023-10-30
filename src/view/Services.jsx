@@ -7,11 +7,11 @@ function Services() {
     return (
         <>
             <Helmet>
-                <title>تاسیسات</title>
+                <title>ساختمان</title>
             </Helmet>
           <AppLayout>
               <div className="self-stretch flex w-full flex-col max-md:max-w-full mb-56">
-                 <Header/>
+                 <Header title="ساختمان"/>
                   <div className="self-center z-[1] mt-0 w-full max-w-[1507px] max-md:max-w-full">
                       <section className="mt-5">
                           <MainCategories/>
@@ -36,7 +36,7 @@ function Services() {
                                   <div className="z-10 mt-5 text-blue-700">
                                       <ul className="space-y-4">
                                           <li>
-                                            <Link to="/">
+                                            <Link to="/sub-services">
                                                 لوله کشی فاضلاب زنجان
                                             </Link>
                                           </li>

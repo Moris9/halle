@@ -1,7 +1,7 @@
 import Worker from "../assets/images/worker.jpg";
 import SerchIcon from "../assets/search.svg";
 
-function Header() {
+function Header({title}) {
     return (
         <>
             <section className="flex-col overflow-hidden self-stretch relative flex min-h-[360px] w-full pt-5 pb-12 px-5 max-md:max-w-full">
@@ -12,12 +12,12 @@ function Header() {
                 />
 
                 <div className="relative self-center flex w-[770px] max-w-full flex-col mt-44 max-md:mt-10">
-                    <div className="text-white text-center text-5xl font-semibold self-center max-md:max-w-full max-md:text-4xl">
-                        تاسیسات
-                    </div>
-                    <div className="text-zinc-300 text-center text-base font-bold self-center mt-6 max-md:max-w-full">
+                    <h2 className="text-white text-center text-5xl font-semibold self-center max-md:max-w-full max-md:text-4xl">
+                        {title}
+                    </h2>
+                    <p className="text-zinc-300 text-center text-base font-bold self-center mt-6 max-md:max-w-full">
                         متخصص مورد نیازتو با حله پیدا کن
-                    </div>
+                    </p>
                     <div className="bg-white self-stretch flex grow flex-col mt-10 pl-5 pr-3 py-2 rounded-[35px] max-md:max-w-full">
                         <div className="flex w-[723px] max-w-full items-start justify-between gap-5 ml-4 max-md:flex-wrap max-md:justify-center">
                             <div className="self-center flex w-[211px] max-w-full items-start justify-between gap-5 my-auto">

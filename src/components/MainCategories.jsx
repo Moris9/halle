@@ -4,6 +4,7 @@ import {BiCar, BiHealth, BiLaptop} from "react-icons/bi";
 import {FaHandshake} from "react-icons/fa";
 import {MdWork} from "react-icons/md";
 import {GiVacuumCleaner} from "react-icons/gi";
+import {Link} from "react-router-dom";
 
 function MainCategories() {
     return (
@@ -11,7 +12,7 @@ function MainCategories() {
 
             <div className="flex gap-10 container justify-center mt-6">
                     <span className="text-center"><BsPersonCircle className="m-5 h-10 w-10"/>زیبایی</span>
-                    <span className="text-center"><BuildingOfficeIcon className="m-5 h-10 w-10"/>ساختمان</span>
+                    <Link to="/services" className="text-center"><BuildingOfficeIcon className="m-5 h-10 w-10"/>ساختمان</Link>
                     <span className="text-center"><BiLaptop className="m-5 h-10 w-10"/>دیجیتال</span>
                     <span className="text-center"><span className="flex justify-center"><BiCar className="m-5 h-10 w-10"/></span>خوردو و حمل و نقل</span>
                     <span className="text-center"><FaHandshake className="m-5 h-10 w-10"/>کسب و کار</span>

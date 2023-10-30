@@ -7,7 +7,7 @@ function Footer() {
                 <div className="mx-auto text-white py-10">
                     <div className="flex justify-center">
                         <div>
-                            <img className="w-3/6 h-[200px]" src={logo} alt="وبسایت خدماتی حله"/>
+                            <img className="h-[350px]" src={logo} alt="وبسایت خدماتی حله"/>
                         </div>
                         <div className="text-center w-full">
                             <h3 className="text-3xl mb-3">دانلود اپلیکیشن حله </h3>

@@ -124,7 +124,7 @@ function AboutUs() {
                         <div className="mb-12 md:mb-0">
                             <div className="mb-6 flex justify-center">
                                 <img
-                                    src="https://avatars.githubusercontent.com/u/53135000?v=4"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/17addbfa-d119-40c0-9dab-1cda57eab189?"
                                     className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
                             </div>
                             <h5 className="mb-4 text-xl font-semibold">یونسی</h5>
@@ -141,7 +141,7 @@ function AboutUs() {
                         <div className="mb-12 md:mb-0">
                             <div className="mb-6 flex justify-center">
                                 <img
-                                    src="https://avatars.githubusercontent.com/u/53135000?v=4"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/17addbfa-d119-40c0-9dab-1cda57eab189?"
                                     className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
                             </div>
                             <h5 className="mb-4 text-xl font-semibold">محمد یونسی</h5>
@@ -158,7 +158,7 @@ function AboutUs() {
                         <div className="mb-12 md:mb-0">
                             <div className="mb-6 flex justify-center">
                                 <img
-                                    src="https://avatars.githubusercontent.com/u/53135000?v=4"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/17addbfa-d119-40c0-9dab-1cda57eab189?"
                                     className="w-32 rounded-full shadow-lg dark:shadow-black/30" />
                             </div>
                             <h5 className="mb-4 text-xl font-semibold">محمد رضایی</h5>

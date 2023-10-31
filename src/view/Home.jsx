@@ -112,7 +112,7 @@ function Home() {
                             </div>
                         )}
                     </section>
-                    <section className="mt-10 bg-blue-200  py-10">
+                    <section className="mt-10 py-10">
                        <MainCategories/>
                     </section>
                     <section className="mt-10 py-10 px-6">

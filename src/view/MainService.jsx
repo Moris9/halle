@@ -30,7 +30,7 @@ function MainService() {
                                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9a439a0f-9dd0-443b-9434-051ec8e46b37?"
                                             className="aspect-[0.9] object-cover object-center w-[52px] fill-indigo-200 overflow-hidden max-w-full self-end"
                                         />
-                                        <div className="grid grid-cols-3 gap-4">
+                                        <div className="grid grid-cols-1 gap-4">
 
                                             <div className="justify-center h-full items-center bg-[#B9E4FF80] flex max-w-full flex-col pt-12 pb-11 px-5 rounded-2xl self-start">
                                                 <div className="self-center max-w-full contents">

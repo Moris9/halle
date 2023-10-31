@@ -22,77 +22,111 @@ function Services() {
                               هر خدمتی که نیاز دارید را پیدا می‌کنید
                           </h2>
 
-                          <div className="mt-10 flex gap-10 justify-center">
 
-                              <article className="relative w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
+                          <div className="mt-10 grid grid-cols-4 gap-10 justify-center">
+
+                                 <article className="relative z-20 w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
+                                          style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>
+                                     <div className="absolute rounded-lg inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                                     <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                                         <h3 className="text-white sm:text-4xl text-2xl font-extrabold text-center">
+                                             تاسیسات
+                                         </h3>
+                                     </div>
+
+                                     <div className="z-20 h-80 mt-5 text-blue-700">
+                                         <ul className="space-y-4">
+                                             <li>
+                                                 <Link to="/sub-services">
+                                                     لوله کشی فاضلاب زنجان
+                                                 </Link>
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+                                         </ul>
+                                     </div>
+
+                                 </article>
+
+                                 <article className="relative z-20 w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
+                                          style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>
+                                     <div className="absolute rounded-lg inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                                     <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                                         <h3 className="text-white sm:text-4xl text-2xl font-extrabold text-center">
+                                             سرمایشی
+                                         </h3>
+                                     </div>
+
+                                     <div className="z-10 mt-5 text-blue-700">
+                                         <ul className="space-y-4">
+                                             <li>
+                                                 <Link to="/">
+                                                     لوله کشی فاضلاب زنجان
+                                                 </Link>
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+                                         </ul>
+                                     </div>
+
+                                 </article>
+
+                                 <article className="relative z-20 w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
+                                          style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>
+                                     <div className="absolute rounded-lg inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                                     <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                                         <h3 className="text-white sm:text-4xl text-2xl font-extrabold text-center">
+                                             گرمایشی
+                                         </h3>
+                                     </div>
+
+                                     <div className="z-10 mt-5 text-blue-700">
+                                         <ul className="space-y-4">
+                                             <li>
+                                                 <Link to="/">
+                                                     لوله کشی فاضلاب زنجان
+                                                 </Link>
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+
+                                             <li>
+                                                 لوله کشی فاضلاب زنجان
+                                             </li>
+                                         </ul>
+                                     </div>
+
+                                 </article>
+
+                              <article className="relative z-20 w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
                                        style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>
-                                  <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
-                                  <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-                                      <h3 className="text-white sm:text-4xl text-2xl font-extrabold text-center">
-                                          تاسیسات
-                                      </h3>
-                                  </div>
-
-                                  <div className="z-10 mt-5 text-blue-700">
-                                      <ul className="space-y-4">
-                                          <li>
-                                            <Link to="/sub-services">
-                                                لوله کشی فاضلاب زنجان
-                                            </Link>
-                                          </li>
-
-                                          <li>
-                                              لوله کشی فاضلاب زنجان
-                                          </li>
-
-                                          <li>
-                                              لوله کشی فاضلاب زنجان
-                                          </li>
-
-                                          <li>
-                                              لوله کشی فاضلاب زنجان
-                                          </li>
-                                      </ul>
-                                  </div>
-
-                              </article>
-
-                              <article className="relative w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
-                                       style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>
-                                  <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
-                                  <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-                                      <h3 className="text-white sm:text-4xl text-2xl font-extrabold text-center">
-                                          سرمایشی
-                                      </h3>
-                                  </div>
-
-                                  <div className="z-10 mt-5 text-blue-700">
-                                      <ul className="space-y-4">
-                                          <li>
-                                              <Link to="/">
-                                                  لوله کشی فاضلاب زنجان
-                                              </Link>
-                                          </li>
-
-                                          <li>
-                                              لوله کشی فاضلاب زنجان
-                                          </li>
-
-                                          <li>
-                                              لوله کشی فاضلاب زنجان
-                                          </li>
-
-                                          <li>
-                                              لوله کشی فاضلاب زنجان
-                                          </li>
-                                      </ul>
-                                  </div>
-
-                              </article>
-
-                              <article className="relative w-full rounded-lg h-48 bg-cover bg-center group shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
-                                       style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>
-                                  <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                                  <div className="absolute rounded-lg inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
                                   <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
                                       <h3 className="text-white sm:text-4xl text-2xl font-extrabold text-center">
                                           گرمایشی
@@ -122,7 +156,10 @@ function Services() {
                                   </div>
 
                               </article>
+
+
                           </div>
+
                       </section>
                   </div>
 

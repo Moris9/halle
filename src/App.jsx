@@ -21,6 +21,10 @@ import Price from "./view/Price.jsx";
 import ServicesPanel from "./view/admin/services/Services.jsx";
 import MainService from "./view/MainService.jsx";
 import {ContextProvider} from "./Contex/ContextProvider.jsx";
+import CreateCategory from "./view/admin/categories/CreateCategory.jsx";
+import EditCategory from "./view/admin/categories/EditCategory.jsx";
+import SubCreateCategory from "./view/admin/subCategories/SubCreateCategory.jsx";
+import EditSubCategory from "./view/admin/subCategories/EditSubCategory.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
@@ -35,9 +39,13 @@ function App() {
         { element: <Users/>, path: '/admin/users' },
         { element: <Experts/>, path: '/admin/experts' },
         { element: <Category/>, path: '/admin/categories' },
+        { element: <CreateCategory/>, path: '/admin/categories/create' },
+        { element: <EditCategory/>, path: '/admin/categories/edit/:id' },
         { element: <Comments/>, path: '/admin/comments' },
-        { element: <ServicesPanel/>, path: '/admin/services' },
         { element: <SubCategory/>, path: '/admin/sub-categories' },
+        { element: <SubCreateCategory/>, path: '/admin/sub-categories/create' },
+        { element: <EditSubCategory/>, path: '/admin/sub-categories/edit/:id' },
+        { element: <ServicesPanel/>, path: '/admin/services' },
         { element: <ExpertDashboard/> , path: '/expert/dashboard'},
         { element: <VIP/> , path: '/expert/vip'},
         { element: <ProfileOverview/> , path: '/expert/profile'},

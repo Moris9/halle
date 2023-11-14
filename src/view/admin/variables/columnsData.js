@@ -24,7 +24,11 @@ export const UsersTable = [
 export const CategoriesTable = [
   {
     Header: "نام",
-    accessor: "name",
+    accessor: "title",
+  },
+  {
+    Header: "عکس",
+    accessor: "icon",
   },
   {
     Header: "تاریخ",
@@ -39,11 +43,11 @@ export const CategoriesTable = [
 export const SubCategoriesTable = [
   {
     Header: "نام",
-    accessor: "name",
+    accessor: "title",
   },
   {
     Header: "کتگوری",
-    accessor: "category",
+    accessor: "category.title",
   },
   {
     Header: "تاریخ",

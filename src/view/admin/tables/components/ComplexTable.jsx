@@ -52,7 +52,7 @@ const ComplexTable = (props) => {
       });
 
       if(!isConfirm){
-        return;
+        return "";
       }
 
     };
@@ -105,7 +105,7 @@ const ComplexTable = (props) => {
                       data = (
                           <div className="flex items-center gap-2">
                             <div className={`rounded-full text-xl text-black`}>
-                              {cell.value}
+                              <img className="h-10 w-10" src={`http://localhost:8000/images/category/${cell.value}`} alt=""/>
                             </div>
                           </div>
                       );

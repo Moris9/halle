@@ -5,27 +5,35 @@ import axios from "axios";
 import {useParams} from "react-router";
 import axiosClient from "../../axios-client.js";
 
-export default function EditCategory() {
+export default function EditSubCategory() {
     const { id } = useParams();
     const [data,setData] = useState('')
+    const [loading,setLoading]=useState(false);
     const [title, setTitle] = useState('');
     const [slug, setSlug] = useState('');
-    const [icon, setIcon] = useState(null);
-
+    const [image, setImage] = useState(null);
+    const [CategoryData,setCategoryData] = useState('')
+    const [category, setCategory] = useState('');
     useEffect(() => {
-        // Fetch data to edit using the 'id' from the URL
-        axiosClient.get(`/category/${id}`)
-            .then(response => {
-                setData(response.data);
-                setTitle(response.data.title)
-                setSlug(response.data.slug)
-                setIcon(response.data.icon)
-            })
-            .catch(error => {
-                console.error('Error fetching data to edit:', error);
-            });
-    }, [id]);
+        const fetchData = async () => {
+            try {
+                const categoryResponse = await axiosClient.get(`/category`);
+                setCategoryData(categoryResponse.data);
 
+                const subcategoryResponse = await axiosClient.get(`/subcategory/${id}`);
+                setData(subcategoryResponse.data);
+                setTitle(subcategoryResponse.data.title);
+                setSlug(subcategoryResponse.data.slug);
+                setImage(subcategoryResponse.data.image);
+
+                setLoading(true); // You can set loading to false when all data is fetched
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData(); // Call the async function to initiate data fetching
+    }, [id]);
 
 
     const handleSubmit = async (e) => {
@@ -35,12 +43,12 @@ export default function EditCategory() {
         formData.append('_method', 'PATCH');
         formData.append('title', title);
         formData.append('slug', slug);
-
-        if(icon!==null){
-            formData.append('icon', icon)
+        formData.append('category_id', category);
+        if(image!==null){
+            formData.append('image', image)
         }
         // Send a PUT request with the FormData
-        axiosClient.post(`/category/${id}`, formData,{
+        axiosClient.post(`/subcategory/${id}`, formData,{
             headers: {
                 'Content-Type': 'multipart/form-data', // Replace with your desired content type
             },
@@ -48,7 +56,7 @@ export default function EditCategory() {
             .then(response => {
                 console.log('Data updated successfully:', response.data);
                 // Redirect to the data list or perform other actions
-                window.location.href = "/admin/categories";
+                // window.location.href = "/admin/sub-categories";
             })
             .catch(error => {
                 console.error('Error updating data:', error);
@@ -57,7 +65,7 @@ export default function EditCategory() {
 
     const handleIconChange = (e) => {
         const selectedIcon = e.target.files[0];
-        setIcon(selectedIcon);
+        setImage(selectedIcon);
     };
 
 
@@ -90,17 +98,36 @@ export default function EditCategory() {
                             name="slug"
                             onChange={(e) => setSlug(e.target.value)}
                         />
+
+                        <div className="">
+                            <label htmlFor="category" className="text-sm text-navy-700 dark:text-white">کتگوری*</label>
+                            <select name="category_id"  value={category} defaultValue={data.id}
+                                    onChange={(e) => setCategory(e.target.value)}
+                                    className="mt-2 flex h-12 w-full items-center justify-center rounded-xl  border bg-white/0 p-3 text-sm outline-none border-gray-200 dark:!border-white/10 text-black dark:text-white" id="category">
+                                <option >یک کتگوری را انتخاب کنید</option>
+                                {loading ?
+                                    CategoryData.map(item=>{
+                                        return (<option key={item.id} value={item.id} selected={item.id == data.id}>
+                                            {item.title}
+                                        </option>)
+                                    }):'در حال بارگذاری'
+
+                                }
+
+                            </select>
+                        </div>
+
                         <InputField
                             variant="category"
                             extra="mb-3"
                             label="عکس"
-                            id="icon"
+                            id="image"
                             type="file"
-                            name="icon"
+                            name="image"
                             onChange={handleIconChange}
                         />
                         <div className="p-5 ">
-                            <img src={`http://localhost:8000/images/category/${data.icon}`} alt="image"/>
+                            <img src={`http://localhost:8000/images/category/${data.image}`} alt="image"/>
                         </div>
 
 

@@ -1,8 +1,8 @@
 import { HiX } from "react-icons/hi";
 import {Link} from "react-router-dom";
 import {IoLinkSharp} from "react-icons/io5";
-import {IoPerson} from "react-icons/io5";
-import {IoPeople} from "react-icons/io5";
+import {IoPerson ,IoPeople , IoBag} from "react-icons/io5";
+
 import {BiCategory, BiLogOut, BiMoney, BiSolidServer} from "react-icons/bi";
 const Sidebar = ({ open, onClose }) => {
 
@@ -11,6 +11,7 @@ const Sidebar = ({ open, onClose }) => {
     { name: 'کابران', href: '/admin/users',icon:<IoPeople/>, current: document.URL.endsWith('users') },
     { name: 'متخصصین', href: '/admin/experts',icon: <IoPerson/>, current: document.URL.endsWith('experts') },
     { name: 'دسته بندی ها', href: '/admin/categories',icon:<BiCategory/>, current: document.URL.endsWith('categories') },
+    { name: 'ساب کتگوری ها', href: '/admin/sub-categories',icon:<IoBag/>, current: document.URL.endsWith('sub-categories') },
     { name: 'نظرات', href: '/admin/comments',icon:<IoLinkSharp/> ,current: document.URL.endsWith('comments') },
   ]
   const ExpertNavigation = [

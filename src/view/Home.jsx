@@ -26,7 +26,7 @@ function Home() {
 
             <AppLayout>
                 <div className="mx-auto">
-                    <section className="px-14">
+                    <section className="px-24 mt-10">
                         <ul className="text-center flex gap-4 text-gray-900 p-10 self-center">
                             <li>
                                 <span
@@ -47,15 +47,13 @@ function Home() {
                         </ul>
 
                         {activeTab === 'page1' && (
-                            <div className="p-5 container">
+                            <div className="p-5 container" key="page1">
                                 <h1 className="text-4xl font-semibold">
                                     با <span className="text-blue-700">حله</span> در کمترین زمان متخصص مورد نیازتو پیدا کن
                                 </h1>
                                 <div className="flex gap-12">
-                                    <div className="self-center max-w-2xl">
-                                        <p className="text-black leading-10 text-justify">وقت کم میاری؟ ⏰ نیاز داری به یک تخصص ولی پیدا نمی کنی؟ دامنه ی انتخابت برای پیدا کردن یک تخصص کوچیکه؟ تفاوت قیمت ها زیاده؟</p>
-                                        <p className="text-black mt-2 leading-10 text-justify">ما در اینجا همه این مشکلات را از بین می بریم. به راحتی بهترین متخصص برای رفع نیازت با بهترین قیمت پیدا کن.</p>
-
+                                    <div className="mt-10 max-w-2xl">
+                                        <p className="text-black leading-10 text-justify">وقت کم میاری؟ نیاز داری به یک تخصص ولی پیدا نمی کنی؟ دامنه ی انتخابت برای پیدا کردن یک تخصص کوچیکه؟ تفاوت قیمت ها زیاده؟ ما در اینجا همه این مشکلات را از بین می بریم. به راحتی بهترین متخصص برای رفع نیازت با بهترین قیمت پیدا کن.</p>
                                             <div className="relative flex items-center w-full overflow-hidden mt-5">
                                                 <div className="flex w-[723px] max-w-full items-start justify-between gap-5 ml-4 max-md:flex-wrap max-md:justify-center">
                                                     <div className="self-center align-middle rounded-lg flex w-full border-2 border-black max-w-full justify-between gap-5 my-auto">
@@ -65,7 +63,7 @@ function Home() {
                                                             id="search"
                                                             placeholder="به چه خدمتی نیاز دارید؟" />
 
-                                                        <button className=" px-2 py-4">
+                                                        <button className="px-2 py-4">
                                                             <img
                                                                 loading="lazy"
                                                                 srcSet={SerchIcon}
@@ -81,7 +79,7 @@ function Home() {
                                         </div>
 
                                     <div className="flex justify-end">
-                                        <img className="w-4/5" src={worker_1} loading="lazy" alt="worker"/>
+                                        <img className="w-4/6" src={worker_1} loading="lazy" alt="worker"/>
                                     </div>
                                 </div>
 
@@ -89,12 +87,12 @@ function Home() {
                         )}
 
                         {activeTab === 'page2' && (
-                            <div className="p-5">
+                            <div className="p-5" key="page2">
                                 <h1  className="text-4xl font-semibold">
                                     با <span className="text-blue-700">حله</span> کارت را معرفی کن
                                 </h1>
                                 <div className="flex gap-12">
-                                    <div className="self-center">
+                                    <div className="mt-10">
                                         <p className="text-black leading-10 text-justify w-[74.666667%]">می خواهی مشتری های بیشتری داشته باشی؟ کیفیت کارت بالاست ولی کار کم؟ میخوای اسم در کنی؟ قیمتت مناسب ارائه میدی ولی بازخورد باید را نداری؟ ما حلش می کنیم! با ما باش تا مشتری را به راحتی پیدات کنه و سفارش هات چند برابر باشه!</p>
 
                                         <div className="flex">
@@ -103,8 +101,8 @@ function Home() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div className="my-5">
-                                        <img className="w-full" src={worker_2} alt="worker"/>
+                                    <div className="">
+                                        <img className="w-4/6" src={worker_2} alt="worker"/>
                                     </div>
                                 </div>
 
@@ -112,13 +110,12 @@ function Home() {
                             </div>
                         )}
                     </section>
-                    <section className="mt-10 py-10">
+
                        <MainCategories/>
-                    </section>
+
                     <section className="mt-10 py-10 px-6">
                         <h2 className="text-4xl font-bold">خدمات محبوب در زنجان</h2>
                         <div className="mt-10 grid sm:grid-cols-6  xl:sm:grid-cols-6 grid-cols-6 gap-1">
-
 
                             <article className="relative w-full rounded-lg h-48 bg-cover bg-center group  overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out "
                                      style={{backgroundImage:`url(https://khedmatazma.com/images/subservices/site_image/full/214--w255-h170-q70.jpg)`}}>

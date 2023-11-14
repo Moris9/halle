@@ -21,19 +21,18 @@ function MainCategories() {
     ]
     return (
         <>
+            <section className="mt-10 py-10 bg-gradient-to-r from-green-300 from-10% to-violet-900 to-100% ">
+                <div className="flex gap-10 container justify-center mt-6">
+                    {
+                        categories.map((item)=>(
 
-            <div className="flex gap-10 container justify-center mt-6">
-                {
-                    categories.map((item)=>(
+                            <Link key={item.id} to={item.to} className="text-center"><img src={item.src} alt={`وبسایت خدماتی حله`+item.name} className="m-5 h-24 bg-white w-24 border-2 rounded p-5"/>{item.name}</Link>
 
-                            <Link to={item.to} className="text-center"><img src={item.src} alt={`وبسایت خدماتی حله`+item.name} className="m-5 h-20 w-20 border-2 rounded p-5"/>{item.name}</Link>
+                        ))
+                    }
 
-
-                    ))
-                }
-
-            </div>
-
+                </div>
+            </section>
 
         </>
     )

@@ -285,6 +285,7 @@ function ExpertRegister() {
                                                             placeholder="نام و نام خانوادگی را وارد کنید"
                                                             variant="auth"
                                                             extra="space-y-2"
+                                                            name="name"
                                                             label="   نام و نام خانوادگی*"
                                                             type="text"
                                                 />
@@ -292,8 +293,18 @@ function ExpertRegister() {
                                                             placeholder="ایمیل را وارد کنید"
                                                             variant="auth"
                                                             extra="space-y-2"
+                                                            name="email"
                                                             label="ایمیل*"
                                                             type="email"
+                                                />
+
+                                                <InputField className="text-[rgba(0,0,0,0.50)] text-xl self-stretch max-w-[285px] bg-gray-400 bg-opacity-40 grow mt-2.5 pt-6 pb-6 px-5 rounded-3xl max-md:max-w-full max-md:pl-2.5"
+                                                            placeholder="کد ملی تان را وارد کنید"
+                                                            variant="auth"
+                                                            extra="space-y-2"
+                                                            name="national_code"
+                                                            label="کد ملی *"
+                                                            type="text"
                                                 />
 
                                                 <InputField className="text-[rgba(0,0,0,0.50)] text-xl self-stretch max-w-[285px] bg-gray-400 bg-opacity-40 grow mt-2.5 pt-6 pb-6 px-5 rounded-3xl max-md:max-w-full max-md:pl-2.5"
@@ -316,7 +327,7 @@ function ExpertRegister() {
 
                                                 <div className="my-5">
                                                     <label htmlFor="category" className="text-sm text-navy-700 dark:text-white">سرویس*</label>
-                                                    <select name="category_id"
+                                                    <select name="subcategory_id"
                                                             onChange=""
                                                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl  border bg-white/0 p-3 text-sm outline-none border-gray-200 dark:!border-white/10 text-black dark:text-white" id="category">
                                                         <option >سرویس را انتخاب کنید</option>
@@ -326,7 +337,7 @@ function ExpertRegister() {
 
                                                 <div className="">
                                                     <label htmlFor="category" className="text-sm text-navy-700 dark:text-white">تخصص*</label>
-                                                    <select name="category_id"
+                                                    <select name="service_id"
                                                             onChange=""
                                                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl  border bg-white/0 p-3 text-sm outline-none border-gray-200 dark:!border-white/10 text-black dark:text-white" id="category">
                                                         <option >تخصص تان  را انتخاب کنید</option>
@@ -347,7 +358,7 @@ function ExpertRegister() {
                                                                 variant="auth"
                                                                 extra="space-y-2"
                                                                 label="تکرار رمز عبور*"
-                                                                type="password"
+                                                                type="c_password"
                                                     />
 
                                                 <div className="bg-sky-100 self-stretch flex flex-col mr-3.5 mt-10 px-5 py-5 rounded-[30px_20px] max-md:max-w-full max-md:mr-2.5">

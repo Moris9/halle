@@ -4,12 +4,14 @@ import Auth from "../../layouts/AuthLayout.jsx";
 import {useState} from "react";
 import {Helmet} from "react-helmet";
 import {Link} from "react-router-dom";
+import axiosClient from "../axios-client.js";
+import {useStateContext} from "../../Contex/ContextProvider.jsx";
 
 
 export default function SignIn() {
   const [formData, setFormData] = useState({ email: '', password: ''});
   const [error, setError] = useState('');
-
+  const {setToken} = useStateContext();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   }
@@ -17,6 +19,24 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const dataToSend = {
+      ...formData,
+      email: formData.email
+    };
+    axiosClient.post('/login' ,dataToSend,{
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      withCredentials: true,
+    }).then((response)=>{
+      setToken(response.data.access_token);
+      window.location.href = "/dashboard";
+
+    }).catch((error) => {
+      console.error(error.response.data.message);
+    });
+
 
   }
 

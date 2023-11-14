@@ -3,11 +3,12 @@ import Auth from "../../layouts/AuthLayout.jsx";
 import {Helmet} from "react-helmet";
 import InputField from "../../components/fields/InputField.jsx";
 import {Link} from "react-router-dom";
-
-
+import axiosClient from "../axios-client.js";
+import {useStateContext} from "../../Contex/ContextProvider.jsx";
 
 function SingUp() {
     const [formData, setFormData] = useState({ email: '', password: ''});
+    const {setToken} = useStateContext();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -15,6 +16,23 @@ function SingUp() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const dataToSend = {
+            ...formData,
+            name: formData.name
+        };
+        axiosClient.post(`/register`, dataToSend, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        }).then((response) => {
+            setToken(response.data.access_token);
+            window.location.href = "/dashboard";
+        })
+            .catch((error) => {
+                console.error(error.response.message);
+            });
     }
 
     return (

@@ -20,6 +20,7 @@ import ExpertRegister from "./view/auth/ExpertRegister.jsx";
 import Price from "./view/Price.jsx";
 import ServicesPanel from "./view/admin/services/Services.jsx";
 import MainService from "./view/MainService.jsx";
+import {ContextProvider} from "./Contex/ContextProvider.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
@@ -40,21 +41,21 @@ function App() {
         { element: <ExpertDashboard/> , path: '/expert/dashboard'},
         { element: <VIP/> , path: '/expert/vip'},
         { element: <ProfileOverview/> , path: '/expert/profile'},
-        { element: <UserDashboard/> , path: '/user/dashboard'},
-        { element: <UserProfileOverview/> , path: '/user/profile'}
+        { element: <UserDashboard/> , path: '/dashboard'},
+        { element: <UserProfileOverview/> , path: '/profile'}
     ]
   return (
-    <>
-        <BrowserRouter>
-            <Routes>
-                {
-                    navigation.map((item)=>(
-                        <Route path={item.path}  key={item.id} exact element={item.element} />
-                    ))
-                }
-            </Routes>
-        </BrowserRouter>
-    </>
+      <ContextProvider>
+          <BrowserRouter>
+                <Routes>
+                    {
+                        navigation.map((item)=>(
+                            <Route path={item.path}  key={item.id} exact element={item.element} />
+                        ))
+                    }
+                </Routes>
+            </BrowserRouter>
+          </ContextProvider>
   )
 }
 

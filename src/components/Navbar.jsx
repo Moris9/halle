@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {Link} from "react-router-dom";
@@ -15,8 +14,7 @@ function classNames(...classes) {
 }
 function Navbar() {
     return (
-        <>
-            <Disclosure as="nav" className="bg-white w-full pt-6">
+        <Disclosure as="nav" className="bg-white w-full pt-6">
                 {({ open }) => (
                     <>
                         <div className="mx-auto px-2 pt-5 sm:px-6 lg:px-8">
@@ -36,7 +34,7 @@ function Navbar() {
                                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mr-20">
                                     <Link to="/" className="flex flex-shrink-0 items-center">
                                         <img
-                                            className="h-15 w-24 scale-[2.8]"
+                                            className="h-15 w-24 scale-[2.2]"
                                             src={logo}
                                             alt="Your Company"
                                         />
@@ -148,7 +146,6 @@ function Navbar() {
                     </>
                 )}
             </Disclosure>
-        </>
     )
 }
 

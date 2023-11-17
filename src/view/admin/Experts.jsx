@@ -15,8 +15,6 @@ function Experts() {
             .then((response) => {
                 setData(response.data);
                 setLoading(true);
-                console.log(response.data);
-
             })
             .catch((error) => {
                 console.error('خطا در درخواست به API Laravel:', error);

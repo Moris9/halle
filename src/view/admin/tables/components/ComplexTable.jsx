@@ -10,6 +10,7 @@ import {BiEdit} from "react-icons/bi";
 import {AiOutlineDelete} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import Swal from "sweetalert2";
+import axiosClient from "../../../axios-client.js";
 const ComplexTable = (props) => {
   const { columnsData, tableData , title} = props;
 
@@ -38,25 +39,68 @@ const ComplexTable = (props) => {
 
 
 
-    const handleDelete = async (id) => {
-      const isConfirm = await Swal.fire({
-        title: 'آیا از این کار مطمن هستید؟',
-        text: "!میخواهی حذف کنی",
-        icon: 'هشدار',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'بله,حذف کن!'
-      }).then((result) => {
-        return result.isConfirmed
-      });
+  const handleDelete = async (id) => {
+    const isConfirm = await Swal.fire({
+      title: 'آیا از این کار مطمن هستید؟',
+      text: "!میخواهی حذف کنی",
+      icon: 'هشدار',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'بله,حذف کن!'
+    }).then((result) => {
+      return result.isConfirmed
+    });
 
-      if(!isConfirm){
-        return "";
-      }
+    if(!isConfirm){
+      return;
+    }
 
-    };
+    try {
 
+      await axiosClient.delete(`${title ==="کتگوری ها" ? "/admin/categories/"
+          : title === "ساب کتگوری ها" ?
+              "/admin/subcategories/" : title === "سرویس ها" ? '/admin/services/' : ''
+      }${id}`).then(({data})=>{
+        Swal.fire({
+          icon:"success",
+          text:data.message
+        })
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const handleApprove = async (id) => {
+    const isConfirm = await Swal.fire({
+      title: 'آیا میخواهی کاربر را به متخصص تبدیل کنی؟',
+      text: "کاربر به متخصص انتخاب خواهد شد",
+      icon: 'هشدار',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '!بله,تایید شود',
+      cancelButtonText: '!خیر'
+    }).then((result) => {
+      return result.isConfirmed
+    });
+
+    if(!isConfirm){
+      return;
+    }
+
+    try {
+
+      await axiosClient.get('/admin/expert-verify/'+id).then(({data})=>{
+        Swal.fire({
+          icon:"success",
+          text:data.message
+        })
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 
   return (
@@ -110,6 +154,15 @@ const ComplexTable = (props) => {
                           </div>
                       );
                     }
+                    else if (cell.column.Header === "ایمیل") {
+                      data = (
+                          <div className="flex items-center gap-2">
+                            <div className={`rounded-full text-xs text-black`}>
+                              {cell.value}
+                            </div>
+                          </div>
+                      );
+                    }
                     else if (cell.column.Header === "شماره تلفن") {
                       data = (
                           <div className="flex items-center gap-2">
@@ -120,6 +173,16 @@ const ComplexTable = (props) => {
                       );
                     }
                     else if (cell.column.Header === "کتگوری") {
+                      data = (
+                          <div className="flex items-center gap-2">
+                            <div className={`rounded-full text-xl text-black`}>
+                              {cell.value}
+                            </div>
+                          </div>
+                      );
+                    }
+
+                    else if (cell.column.Header === "ساب کتگوری") {
                       data = (
                           <div className="flex items-center gap-2">
                             <div className={`rounded-full text-xl text-black`}>
@@ -154,16 +217,23 @@ const ComplexTable = (props) => {
                     } else if (cell.column.Header === "تنظیمات") {
                       data = (
                           <div className="flex justify-center">
+                            {document.URL.includes("experts") && title == "متخصصین تایید نشده" ? (
+                         <div>
+                           <button className="bg-blue-500 py-2 px-5 text-white rounded-xl" onClick={() => handleApprove(cell.value)}>تایید</button>
+                         </div>
+                    ):(
+                            <>
+                              <Link
+                                  to={"edit/"+`${cell.value}`
+                                  }
+                              >
 
-                            <Link
-                                to={"edit/"+`${cell.value}`
-                                 }
-                            >
+                                <BiEdit className="h-4 w-4 text-black" />
+                              </Link>
 
-                              <BiEdit className="h-4 w-4 text-black" />
-                            </Link>
-
-                            <button onClick={() => handleDelete(cell.value)}> <AiOutlineDelete className="h-4 w-4 text-black"/></button>
+                              <button onClick={() => handleDelete(cell.value)}> <AiOutlineDelete className="h-4 w-4 text-black"/></button>
+                            </>
+                      )}
                           </div>
                           )
                     }

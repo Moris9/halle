@@ -11,7 +11,7 @@ export default function SubCategory() {
 
     useEffect(() => {
         //send GET request to API catch all subcategory
-        axiosClient.get(`/subcategory`)
+        axiosClient.get(`/admin/subcategories`)
             .then((response) => {
                 setData(response.data);
                 setLoading(true);

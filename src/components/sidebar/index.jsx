@@ -1,7 +1,7 @@
 import { HiX } from "react-icons/hi";
 import {Link} from "react-router-dom";
 import {IoLinkSharp} from "react-icons/io5";
-import {IoPerson ,IoPeople , IoBag} from "react-icons/io5";
+import {IoPerson ,IoPeople , IoBag, IoServer} from "react-icons/io5";
 
 import {BiCategory, BiLogOut, BiMoney, BiSolidServer} from "react-icons/bi";
 const Sidebar = ({ open, onClose }) => {
@@ -9,15 +9,16 @@ const Sidebar = ({ open, onClose }) => {
   const AdminNavigation = [
     { name: 'داشبورد', href: '/admin/dashboard',icon:<BiSolidServer/>, current: document.URL.endsWith('dashboard') },
     { name: 'کابران', href: '/admin/users',icon:<IoPeople/>, current: document.URL.endsWith('users') },
-    { name: 'متخصصین', href: '/admin/experts',icon: <IoPerson/>, current: document.URL.endsWith('experts') },
+    { name: 'متخصصین', href: '/admin/experts',icon: <IoPerson/>, current: document.URL.endsWith('expertsss') },
     { name: 'دسته بندی ها', href: '/admin/categories',icon:<BiCategory/>, current: document.URL.endsWith('categories') },
     { name: 'ساب کتگوری ها', href: '/admin/sub-categories',icon:<IoBag/>, current: document.URL.endsWith('sub-categories') },
+    { name: 'سرویس ها', href: '/admin/services',icon:<IoServer/>, current: document.URL.endsWith('services') },
     { name: 'نظرات', href: '/admin/comments',icon:<IoLinkSharp/> ,current: document.URL.endsWith('comments') },
   ]
   const ExpertNavigation = [
-    {name: 'داشبورد' , href: '/expert/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
-    {name: 'عضویت ویژه' , href: '/expert/vip', icon: <BiMoney/> , current: document.URL.endsWith('vip')},
-    {name: 'پروفایل' , href: '/expert/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')}
+    {name: 'داشبورد' , href: '/specialist/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
+    {name: 'عضویت ویژه' , href: '/specialist/vip', icon: <BiMoney/> , current: document.URL.endsWith('vip')},
+    {name: 'پروفایل' , href: '/specialist/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')}
   ]
   const UserNavigation = [
     {name: 'داشبورد' , href: '/user/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
@@ -47,7 +48,7 @@ const Sidebar = ({ open, onClose }) => {
       {/* Nav item */}
 
       <ul className="mb-auto pt-1">
-        {(document.URL.includes('expert') ? ExpertNavigation : (document.URL.includes('admin') ?  AdminNavigation : UserNavigation).map((item) => (
+        {(document.URL.includes('specialist') ? ExpertNavigation : (document.URL.includes('admin') ?  AdminNavigation : UserNavigation).map((item) => (
             <Link
                 key={item.name}
                 to={item.href}

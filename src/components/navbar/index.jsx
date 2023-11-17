@@ -69,41 +69,41 @@ const Navbar = (props) => {
       </div>
       {/* Profile & Dropdown */}
       {user ? (
-      <Dropdown
-          button={
-            <img
-                className="h-10 w-10 rounded-full"
-                src= {user.name}
-                alt=""
-            />
-          }
-          children={
-            <div className="flex w-56 flex-col justify-start rounded-[20px] bg-white bg-cover bg-no-repeat shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
-              <div className="p-4">
-                <div className="flex items-center gap-2">
-                  <p className="text-sm font-bold text-navy-700 dark:text-white">
-                    {user.name}
-                  </p>{" "}
+          <Dropdown
+              button={
+                <img
+                    className="h-10 w-10 rounded-full"
+                    src= {user.name}
+                    alt=""
+                />
+              }
+              children={
+                <div className="flex w-56 flex-col justify-start rounded-[20px] bg-white bg-cover bg-no-repeat shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
+                  <div className="p-4">
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-bold text-navy-700 dark:text-white">
+                        {user.name}
+                      </p>{" "}
+                    </div>
+                  </div>
+                  <div className="h-px w-full bg-gray-200 dark:bg-white/20 " />
+
+                  <div className="flex flex-col p-4">
+
+                    <a
+                        onClick={handleLogout}
+                        className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
+                    >
+                      خروج از حساب کاربری
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className="h-px w-full bg-gray-200 dark:bg-white/20 " />
-
-              <div className="flex flex-col p-4">
-
-                <a
-                    onClick={handleLogout}
-                    className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
-                >
-                  خروج از حساب کاربری
-                </a>
-              </div>
-            </div>
-          }
-          classNames={"py-2 top-8 max-sm:!right-[-200px] -right-[180px] w-max"}
-      />
-          ):(
-              ''
-          )
+              }
+              classNames={"py-2 top-8 max-sm:!right-[-200px] -right-[180px] w-max"}
+          />
+      ):(
+          ''
+      )
       }
      </nav>
   );

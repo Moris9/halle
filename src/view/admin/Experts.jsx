@@ -1,11 +1,27 @@
 import {Helmet} from "react-helmet";
 import Admin from "../../layouts/AdminLayout.jsx";
 import ComplexTable from "./tables/components/ComplexTable.jsx";
-import {UsersTable} from "./variables/columnsData.js";
-import {useState} from "react";
+import {ExpertTable} from "./variables/columnsData.js";
+import {useEffect, useState} from "react";
+import axiosClient from "../axios-client.js";
 
 function Experts() {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        //send GET request to API catch all category
+       axiosClient.get(`/admin/experts`)
+            .then((response) => {
+                setData(response.data);
+                setLoading(true);
+                console.log(response.data);
+
+            })
+            .catch((error) => {
+                console.error('خطا در درخواست به API Laravel:', error);
+            });
+    }, []);
 
     return (
         <>
@@ -16,21 +32,27 @@ function Experts() {
             <Admin currentRoute="متخصصین">
                 <div className="mt-5 space-y-10 grid grid-cols-1">
 
-                    <ComplexTable
-                        title="متخصصین"
-                        columnsData={UsersTable}
-                        tableData={data}
-                    />
+                    {loading ? (
+                        <>
+                            <ComplexTable
+                                title="متخصصین"
+                                columnsData={ExpertTable}
+                                tableData={data.expert}
+                            />
 
-                    <ComplexTable
-                        title="متخصصین تایید نشده"
-                        columnsData={UsersTable}
-                        tableData={data}
-                    />
+                            <ComplexTable
+                                title="متخصصین تایید نشده"
+                                columnsData={ExpertTable}
+                                tableData={data.unVerified}
+                            />
+                        </>
+
+                    ):(
+                        <span>در حال بارگذاری</span>
+                    )}
 
                 </div>
             </Admin>
-
         </>
     )
 }

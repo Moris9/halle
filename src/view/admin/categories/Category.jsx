@@ -11,7 +11,7 @@ export default function Category() {
 
     useEffect(() => {
         //send GET request to API catch all category
-        axiosClient.get(`/category`)
+        axiosClient.get(`/admin/categories`)
             .then((response) => {
                 setData(response.data);
                 setLoading(true);

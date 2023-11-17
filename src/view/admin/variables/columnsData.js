@@ -8,7 +8,7 @@ export const UsersTable = [
     accessor: "email",
   },
   {
-    Header: "شماره تماس",
+    Header: "شماره تلفن",
     accessor: "tel",
   },
   {
@@ -20,6 +20,30 @@ export const UsersTable = [
     accessor: "id",
   },
 ];
+
+export const ExpertTable = [
+  {
+    Header: "نام",
+    accessor: "name",
+  },
+  {
+    Header: "ایمیل",
+    accessor: "email",
+  },
+  {
+    Header: "شماره تلفن",
+    accessor: "tel",
+  },
+  {
+    Header: "تاریخ",
+    accessor: "created_at",
+  },
+  {
+    Header: "تنظیمات",
+    accessor: "id",
+  },
+];
+
 
 export const CategoriesTable = [
   {
@@ -62,11 +86,11 @@ export const SubCategoriesTable = [
 export const ServicesTable = [
   {
     Header: "نام",
-    accessor: "name",
+    accessor: "title",
   },
   {
     Header: "ساب کتگوری",
-    accessor: "category",
+    accessor: "subcategory.title",
   },
   {
     Header: "تاریخ",

@@ -17,7 +17,7 @@ export default function SubCreateCategory() {
 
     useEffect(() => {
         // ارسال درخواست GET به API Laravel
-        axiosClient.get(`/category`)
+        axiosClient.get(`/admin/categories`)
             .then((response) => {
                 setData(response.data);
                 setLoading(true);
@@ -38,7 +38,7 @@ export default function SubCreateCategory() {
         formData.append('category_id', category);
 
         try {
-            axiosClient.post(`/subcategory` ,formData, {
+            await axiosClient.post(`/admin/subcategories`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`,

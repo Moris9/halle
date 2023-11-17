@@ -2,9 +2,27 @@ import { MdBarChart, MdDashboard } from "react-icons/md";
 import Widget from "../../components/widget/Widget.jsx";
 import Admin from "../../layouts/AdminLayout.jsx";
 import {Helmet} from "react-helmet";
+import {useEffect, useState} from "react";
+import axiosClient from "../axios-client.js";
 
 const AdminDashboard = () => {
-  return (
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        //send GET request to API catch all category
+        axiosClient.get(`/admin/dashboard`)
+            .then((response) => {
+                setData(response.data);
+                setLoading(true);
+            })
+            .catch((error) => {
+                console.error('خطا در درخواست به API Laravel:', error);
+            });
+    }, []);
+
+
+    return (
     <Admin currentRoute="داشبورد">
         <Helmet>
             <title>خدمت از ما-داشبورد</title>
@@ -19,18 +37,18 @@ const AdminDashboard = () => {
         <Widget
           icon={<MdDashboard className="h-6 w-6" />}
           title={"تعداد متخصصین"}
-          subtitle={"+20"}
+          subtitle={data.expertCount}
         />
 
           <Widget
               icon={<MdDashboard className="h-6 w-6" />}
               title={"متخصصین نیاز به تایید"}
-              subtitle={"+2"}
+              subtitle={data.expertUnverifiedCount}
           />
           <Widget
               icon={<MdDashboard className="h-6 w-6" />}
               title={"تعداد کاربران"}
-              subtitle={"+20"}
+              subtitle={data.usersCount}
           />
       </div>
 

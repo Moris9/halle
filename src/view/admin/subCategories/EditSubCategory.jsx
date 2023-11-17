@@ -17,10 +17,10 @@ export default function EditSubCategory() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const categoryResponse = await axiosClient.get(`/category`);
+                const categoryResponse = await axiosClient.get(`/admin/categories`);
                 setCategoryData(categoryResponse.data);
 
-                const subcategoryResponse = await axiosClient.get(`/subcategory/${id}`);
+                const subcategoryResponse = await axiosClient.get(`/admin/subcategories/${id}`);
                 setData(subcategoryResponse.data);
                 setTitle(subcategoryResponse.data.title);
                 setSlug(subcategoryResponse.data.slug);
@@ -48,15 +48,15 @@ export default function EditSubCategory() {
             formData.append('image', image)
         }
         // Send a PUT request with the FormData
-        axiosClient.post(`/subcategory/${id}`, formData,{
+        axiosClient.post(`/admin/subcategories/${id}`, formData,{
             headers: {
-                'Content-Type': 'multipart/form-data', // Replace with your desired content type
+                'Content-Type': 'multipart/form-data',
             },
         })
             .then(response => {
                 console.log('Data updated successfully:', response.data);
                 // Redirect to the data list or perform other actions
-                // window.location.href = "/admin/sub-categories";
+                window.location.href = "/admin/sub-categories";
             })
             .catch(error => {
                 console.error('Error updating data:', error);

@@ -11,8 +11,6 @@ const UserProfileOverview = () => {
                <div className="col-span-4 lg:!mb-0">
                    <Banner />
                </div>
-
-
                <div className="z-0 col-span-5 lg:!mb-0">
                    <Upload />
                </div>

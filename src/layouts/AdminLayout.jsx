@@ -5,8 +5,7 @@ import Footer from "../components/footer/Footer.jsx";
 import {useMediaQuery} from "react-responsive";
 export default function Admin({children , currentRoute}) {
     const [open, setOpen] = useState(true);
-    const isMobile = useMediaQuery({ maxWidth: 768 });
-
+    const isMobile = useMediaQuery({ maxWidth: 400 });
     const closeSidebar = () => {
         setOpen(false);
     };
@@ -19,7 +18,6 @@ export default function Admin({children , currentRoute}) {
     const openSidebar=()=>{
         setOpen(!open);
     }
-
 
   return (
       <div className="flex h-full w-full" dir="rtl">

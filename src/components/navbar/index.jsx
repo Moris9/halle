@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import {useEffect, useState} from "react";
 import axiosClient from "../../view/axios-client.js";
 import {useStateContext} from "../../Contex/ContextProvider.jsx";
+import {FiAlignJustify} from "react-icons/fi";
 
 const Navbar = (props) => {
-  const { brandText } = props;
+  const { brandText,onOpenSidenav } = props;
   const [user, setCurrentUser] = useState(null);
   const {token} = useStateContext();
 
@@ -37,6 +38,12 @@ const Navbar = (props) => {
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
+      <span
+          className="flex cursor-pointer text-xl text-gray-600 dark:text-white xl:hidden"
+          onClick={onOpenSidenav}
+      >
+          <FiAlignJustify className="h-5 w-5" />
+        </span>
       <div className="ml-[6px]">
         <div className="h-6 w-[224px] pt-1">
           <a
@@ -64,7 +71,6 @@ const Navbar = (props) => {
             {brandText}
           </Link>
         </p>
-
 
       </div>
       {/* Profile & Dropdown */}

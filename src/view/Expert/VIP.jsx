@@ -1,7 +1,28 @@
 import Admin from "../../layouts/AdminLayout.jsx";
 import {Helmet} from "react-helmet";
+import axiosClient from "../axios-client.js";
+import {useState} from "react";
 
 function VIP() {
+    const [vipID, setVipID] = useState(1);
+    function handleClickVipID(id){
+        setVipID(id)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('id', vipID);
+
+        try {
+            await axiosClient.post(`/payment/vip`, formData);
+            window.location.href = "//categories";
+        } catch (error) {
+            console.error('خطا در ارسال درخواست: ', error);
+        }
+    };
+
     return (
         <>
             <Admin currentRoute="داشبورد">
@@ -9,7 +30,8 @@ function VIP() {
                     <title>حله-عضویت ویژه</title>
                 </Helmet>
 
-                <div className="grid lg:grid-cols-2 px-8 gap-10 text-zinc-800 mt-10">
+                <form onSubmit={handleSubmit} className="grid lg:grid-cols-2 px-8 gap-10 text-zinc-800 mt-10">
+
                     <div className="flex flex-col items-center bg-slate-100 p-8 rounded-lg shadow-lg max-w-sm">
                         <div>
                             <h2 className="font-extrabold text-3xl text-center mb-2">شروع</h2>
@@ -49,8 +71,8 @@ function VIP() {
                                 <b>قرار گرفتن در اول لیست</b>
                             </p>
 
-                            <div className="flex justify-center mt-8 ">
-                                <button className="px-4 py-2 border-violet-400 border-4 hover:bg-violet-100 rounded-xl">
+  <div className="flex justify-center mt-8 ">
+                                <button onClick={() => handleClickVipID(1)} className="px-4 py-2 border-violet-400 border-4 hover:bg-violet-100 rounded-xl">
                                     خرید
                                 </button>
                             </div>
@@ -119,13 +141,14 @@ function VIP() {
                                 <b>قرار گرفتن در اول لیست</b>
                             </p>
                             <div className="flex justify-center mt-8">
-                                <button className="px-4 py-2 border-violet-400 border-4 hover:bg-violet-100 rounded-xl">
+                                <button onClick={() => handleClickVipID(2)} className="px-4 py-2 border-violet-400 border-4 hover:bg-violet-100 rounded-xl">
                                     خرید
                                 </button>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                </form>
 
             </Admin>
 

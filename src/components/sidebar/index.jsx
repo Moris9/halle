@@ -15,11 +15,13 @@ const Sidebar = ({ open, onClose }) => {
     { name: 'سرویس ها', href: '/admin/services',icon:<IoServer/>, current: document.URL.endsWith('services') },
     { name: 'نظرات', href: '/admin/comments',icon:<IoLinkSharp/> ,current: document.URL.endsWith('comments') },
   ]
+
   const SpecialistNavigation = [
     {name: 'داشبورد' , href: '/specialist/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
     {name: 'عضویت ویژه' , href: '/specialist/vip', icon: <BiMoney/> , current: document.URL.endsWith('vip')},
     {name: 'پروفایل' , href: '/specialist/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')}
   ]
+
   const UserNavigation = [
     {name: 'داشبورد' , href: '/user/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
     {name: 'پروفایل' , href: '/user/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')},
@@ -48,17 +50,17 @@ const Sidebar = ({ open, onClose }) => {
       {/* Nav item */}
 
       <ul className="mb-auto pt-1">
-        {(document.URL.endsWith('specialist') ? SpecialistNavigation : (document.URL.includes('admin') ?  AdminNavigation : UserNavigation).map((item) => (
+        {((document.URL.includes('specialist') ? SpecialistNavigation : (document.URL.includes('admin') ?  AdminNavigation : UserNavigation)).map((item) => (
             <Link
                 key={item.name}
                 to={item.href}
-                className="text-gray-800 hover:text-gray-500 px-3 py-2 text-sm font-medium">
+                className="text-gray-800 hover:text-gray-500 px-3 py-2 text-sm font-medium"
+            >
               <div className="relative mb-3 flex hover:cursor-pointer">
                 <li className="my-[3px] flex cursor-pointer items-center px-8">
-                    <span
-                        className="font-bold text-brand-500 dark:text-white">
-                        {item.icon}
-                    </span>
+          <span className="font-bold text-brand-500 dark:text-white">
+            {item.icon}
+          </span>
                   <p className="leading-1 ml-4 flex font-bold text-navy-700 dark:text-white">{item.name}</p>
                 </li>
                 {item.current && (
@@ -67,8 +69,8 @@ const Sidebar = ({ open, onClose }) => {
               </div>
             </Link>
         )))}
-
       </ul>
+
 
 
       {/* Nav item end */}

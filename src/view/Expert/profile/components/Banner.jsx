@@ -1,7 +1,10 @@
 import Card from "../../../../components/card";
 
-const Banner = () => {
-  return (
+import moment from "moment-jalaali";
+
+const Banner = ({user , loading}) => {
+
+    return (
     <Card extra={"items-center w-full h-full p-[16px] bg-cover"}>
       {/* Background and profile */}
       <div
@@ -12,34 +15,38 @@ const Banner = () => {
           <img className="h-full w-full rounded-full" src='https://avatars.githubusercontent.com/u/53135000?v=4' alt="" />
         </div>
       </div>
+        {loading ?
+        <>
+            {/* Name and position */}
+            <div className="mt-16 flex flex-col items-center">
+                <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+                    {user.user.name}
+                </h4>
+                <p className="text-base font-normal text-gray-600">{user.service.title}</p>
+            </div>
 
-      {/* Name and position */}
-      <div className="mt-16 flex flex-col items-center">
-        <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-          محمد عبدالرحمانی
-        </h4>
-        <p className="text-base font-normal text-gray-600">برنامه نویس full-stack</p>
-      </div>
-
-      {/* Post followers */}
-      <div className="mt-6 mb-3 flex gap-4 md:!gap-14">
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-2xl font-bold text-navy-700 dark:text-white">17</p>
-          <p className="text-sm font-normal text-gray-600">محبوبیت</p>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-2xl font-bold text-navy-700 dark:text-white">
-            خیر
-          </p>
-          <p className="text-sm font-normal text-gray-600">عضویت ویژه</p>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-2xl font-bold text-navy-700 dark:text-white">
-            23/03/02
-          </p>
-          <p className="text-sm font-normal text-gray-600">تاریخ عضویت</p>
-        </div>
-      </div>
+            {/* Post followers */}
+            <div className="mt-6 mb-3 flex gap-4 md:!gap-14">
+                <div className="flex flex-col items-center justify-center">
+                    <p className="text-2xl font-bold text-navy-700 dark:text-white">17</p>
+                    <p className="text-sm font-normal text-gray-600">محبوبیت</p>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                    <p className="text-2xl font-bold text-navy-700 dark:text-white">
+                        {user.active == 0 ? "خیر" : 'بله'}
+                    </p>
+                    <p className="text-sm font-normal text-gray-600">عضویت ویژه</p>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                    <p className="text-2xl font-bold text-navy-700 dark:text-white">
+                        {moment(user.created_at).format('l')}
+                    </p>
+                    <p className="text-sm font-normal text-gray-600">تاریخ عضویت</p>
+                </div>
+            </div>
+        </>
+    : ''
+}
     </Card>
   );
 };

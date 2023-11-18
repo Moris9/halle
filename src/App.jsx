@@ -27,6 +27,7 @@ import SubCreateCategory from "./view/admin/subCategories/SubCreateCategory.jsx"
 import EditSubCategory from "./view/admin/subCategories/EditSubCategory.jsx";
 import CreateServices from "./view/admin/services/CreateServices.jsx";
 import EditServices from "./view/admin/services/EditServices.jsx";
+import ExpertProfileEdit from "./view/Expert/profile/ExpertProfileEdit.jsx";
 function App() {
     const navigation = [
         { element: <Home/>, path: '/' },
@@ -52,6 +53,7 @@ function App() {
         { element: <EditServices/>, path: '/admin/services/edit/:id' },
         { element: <ExpertDashboard/> , path: '/specialist/dashboard'},
         { element: <VIP/> , path: '/specialist/vip'},
+        { element: <ExpertProfileEdit/> , path: '/specialist/profile-edit'},
         { element: <ProfileOverview/> , path: '/specialist/profile'},
         { element: <UserDashboard/> , path: '/dashboard'},
         { element: <UserProfileOverview/> , path: '/profile'}

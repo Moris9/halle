@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {IoLinkSharp} from "react-icons/io5";
 import {IoPerson ,IoPeople , IoBag, IoServer} from "react-icons/io5";
 
-import {BiCategory, BiLogOut, BiMoney, BiSolidServer} from "react-icons/bi";
+import {BiCategory, BiMoney, BiSolidServer} from "react-icons/bi";
 const Sidebar = ({ open, onClose }) => {
 
   const AdminNavigation = [
@@ -23,9 +23,7 @@ const Sidebar = ({ open, onClose }) => {
   ]
 
   const UserNavigation = [
-    {name: 'داشبورد' , href: '/user/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
-    {name: 'پروفایل' , href: '/user/profile', icon: <IoPerson/> , current: document.URL.endsWith('profile')},
-    {name: 'خروج' , href: '/user/logout', icon: <BiLogOut/> , current: document.URL.endsWith('logout')}
+    {name: 'داشبورد' , href: '/dashboard', icon: <BiSolidServer/> , current: document.URL.endsWith('dashboard')},
   ]
 
   return (

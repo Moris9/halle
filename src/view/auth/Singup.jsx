@@ -2,7 +2,7 @@ import {useState} from "react";
 import Auth from "../../layouts/AuthLayout.jsx";
 import {Helmet} from "react-helmet";
 import InputField from "../../components/fields/InputField.jsx";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import axiosClient from "../axios-client.js";
 import {useStateContext} from "../../Contex/ContextProvider.jsx";
 
@@ -14,6 +14,10 @@ function SingUp() {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     }
 
+    const ACCESS_TOKEN = localStorage.getItem('ACCESS_TOKEN')
+    if (ACCESS_TOKEN){
+        return <Navigate to='/'/>
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
 

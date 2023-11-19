@@ -4,22 +4,16 @@ import {useEffect, useState} from "react";
 import axiosClient from "../../view/axios-client.js";
 import {useStateContext} from "../../Contex/ContextProvider.jsx";
 import {FiAlignJustify} from "react-icons/fi";
+import AxiosClient from "../../view/axios-client.js";
 
 const Navbar = (props) => {
   const { brandText,onOpenSidenav } = props;
   const [user, setCurrentUser] = useState(null);
-  const {token} = useStateContext();
-
-
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
         // Send req to current user
-        await axiosClient.post('/user', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }).then((response)=>{
+        await axiosClient.post('/user', ).then((response)=>{
           setCurrentUser(response.data);
         })
 
@@ -30,9 +24,17 @@ const Navbar = (props) => {
     fetchCurrentUser();
   }, []);
 
-
-
   const handleLogout = async () => {
+    try {
+      // Make an API request to log the user out
+      await AxiosClient.post(`/logout`);
+      // Remove the access token from local storage
+      localStorage.removeItem('ACCESS_TOKEN');
+      // Redirect to the login page or update the UI
+      window.location.href = "/";
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   }
 
 
@@ -77,11 +79,9 @@ const Navbar = (props) => {
       {user ? (
           <Dropdown
               button={
-                <img
-                    className="h-10 w-10 rounded-full"
-                    src= {user.name}
-                    alt=""
-                />
+                <span
+                    className="h-14 w-14 rounded-full bg-blue-500 text-xs items-center justify-center cursor-pointer text-white flex"
+                >پروفایل</span>
               }
               children={
                 <div className="flex w-56 flex-col justify-start rounded-[20px] bg-white bg-cover bg-no-repeat shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
@@ -97,7 +97,7 @@ const Navbar = (props) => {
                   <div className="flex flex-col p-4">
 
                     <a
-                        onClick={handleLogout}
+                        onClick={handleLogout} role="button"
                         className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
                     >
                       خروج از حساب کاربری

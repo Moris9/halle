@@ -40,9 +40,9 @@ const Sidebar = ({ open, onClose }) => {
       </span>
 
       <div className={`mt-[10px] flex items-center`}>
-        <div className="mt-1 ml-1 font-poppins text-6xl p-5 logo-font font-bold uppercase">
+        <Link to="/" className="mt-1 ml-1 font-poppins text-6xl p-5 logo-font font-bold uppercase">
           خدمت از ما
-        </div>
+        </Link>
       </div>
       <div className="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
       {/* Nav item */}

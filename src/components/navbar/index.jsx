@@ -47,7 +47,7 @@ const Navbar = (props) => {
           <FiAlignJustify className="h-5 w-5" />
         </span>
       <div className="ml-[6px]">
-        <div className="h-6 w-[224px] pt-1">
+        <div className="h-6 sm:w-[224px] pt-1">
           <a
             className="text-sm font-normal text-navy-700 hover:text-gray-400 dark:text-white dark:hover:text-white"
             href=" "
@@ -105,7 +105,7 @@ const Navbar = (props) => {
                   </div>
                 </div>
               }
-              classNames={"py-2 top-8 max-sm:!right-[-200px] -right-[180px] w-max"}
+              classNames={"py-2 top-8 max-sm:!right-[-200px] sm:-right-[180px] w-max"}
           />
       ):(
           ''
